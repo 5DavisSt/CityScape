@@ -667,3 +667,135 @@ PS C:\Users\steve\cityscape> symfony serve -d
 
 
 Stream the logs via symfony.exe server:log
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:controller Property
+ created: src/Controller/PropertyController.php
+ created: templates/property/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller PropertySidebar
+ created: src/Controller/PropertySidebarController.php
+ created: templates/property_sidebar/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller PropertyDetails
+ created: src/Controller/PropertyDetailsController.php
+ created: templates/property_details/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller AddNewListing
+ created: src/Controller/AddNewListingController.php
+ created: templates/add_new_listing/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller About
+ created: src/Controller/AboutController.php
+ created: templates/about/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller Cart
+ created: src/Controller/CartController.php
+ created: templates/cart/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller Checkout
+ created: src/Controller/CheckoutController.php
+ created: templates/checkout/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller FAQ
+ created: src/Controller/FAQController.php
+ created: templates/faq/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller Project
+ created: src/Controller/ProjectController.php
+ created: templates/project/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller ProjectDetails
+ created: src/Controller/ProjectDetailsController.php
+ created: templates/project_details/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller BlogClassic
+ created: src/Controller/BlogClassicController.php
+ created: templates/blog_classic/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller BlogDetails
+ created: src/Controller/BlogDetailsController.php
+ created: templates/blog_details/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller Contact
+ created: src/Controller/ContactController.php
+ created: templates/contact/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
