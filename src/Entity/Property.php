@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\PropertyRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PropertyRepository::class)]
 class Property
 {
-    #[ORM\Id]
+	use TimestampTraits;
+	
+	#[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
@@ -24,9 +27,6 @@ class Property
 
     #[ORM\Column]
     private ?int $prop_price = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $prop_nb_beds = null;
@@ -89,18 +89,6 @@ class Property
     public function setPropPrice(int $prop_price): static
     {
         $this->prop_price = $prop_price;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
-    {
-        $this->created_at = $created_at;
 
         return $this;
     }

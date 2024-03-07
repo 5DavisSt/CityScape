@@ -89,7 +89,7 @@ class AppFixtures extends Fixture
             $picture = new Picture();
             $picture->setPicFile($faker->word());
             $picture->setPicName($faker->word());
-            $picture->setPicHref($faker->"assets/");
+            $picture->setPicHref("assets/");
             $picture->setPicAlt($faker->sentence(5));
             $picture->setPicCaption($faker->sentence(5));
             $picture->setPicType($faker->numberBetween(0, 5));

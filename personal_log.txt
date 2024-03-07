@@ -2447,3 +2447,178 @@ PS C:\Users\steve\cityscape> symfony serve -d
 
 Stream the logs via symfony.exe server:log
 PS C:\Users\steve\cityscape>
+
+PS C:\Users\steve\cityscape> composer require vich/uploader-bundle
+./composer.json has been updated
+Running composer update vich/uploader-bundle
+Loading composer repositories with package information
+Restricting packages listed in "symfony/symfony" to "7.0.*"
+Updating dependencies
+Lock file operations: 2 installs, 0 updates, 0 removals
+  - Locking jms/metadata (2.8.0)
+  - Locking vich/uploader-bundle (2.3.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+    Failed to download jms/metadata from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing jms/metadata (2.8.0) into cache
+    Failed to download vich/uploader-bundle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing vich/uploader-bundle (2.3.1) into cache
+  - Installing jms/metadata (2.8.0): Cloning 7ca240dcac from cache
+  - Installing vich/uploader-bundle (2.3.1): Cloning f21f620502 from cache
+Generating autoload files
+113 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 1 recipe (b1c4e512c1bbad25c8b58fa3fb26f017)
+  -  WARNING  vich/uploader-bundle (>=1.13): From github.com/symfony/recipes-contrib:main
+    The recipe for this package comes from the "contrib" repository, which is open to community contributions.
+    Review the recipe at https://github.com/symfony/recipes-contrib/tree/main/vich/uploader-bundle/1.13
+
+    Do you want to execute this recipe?
+    [y] Yes
+    [n] No
+    [a] Yes for all packages, only for the current installation session
+    [p] Yes permanently, never ask again for this project
+    (defaults to n): y
+  - Configuring vich/uploader-bundle (>=1.13): From github.com/symfony/recipes-contrib:main
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+ What's next?
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+No security vulnerability advisories found.
+Using version ^2.3 for vich/uploader-bundle
+PS C:\Users\steve\cityscape> symfony console make:migration
+ParseError {#500
+  #message: "syntax error, unexpected double-quoted string "assets/", expecting identifier or variable or "{" or "$""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\AppFixtures.php"
+  #line: 92
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\AppFixtures.php:92 {
+      Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(string $class): void^
+      › $picture->setPicName($faker->word());
+      › $picture->setPicHref($faker->"assets/");
+      › $picture->setPicAlt($faker->sentence(5));
+    }
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 10 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+In MappingException.php line 420:
+
+  Duplicate definition of column 'created_at' on entity 'App\Entity\Property' in a field or discriminator column mapp
+  ing.
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 10 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307102258.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+
+In ExceptionConverter.php line 117:
+
+  An exception occurred while executing a query: SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid defa
+  ult value for 'created_at'
+
+
+In Exception.php line 28:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid default value for 'created_at'
+
+
+In Connection.php line 33:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid default value for 'created_at'
+
+
+doctrine:schema:update [--em EM] [--complete] [--dump-sql] [-f|--force]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 11 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307102508.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     2 queries were executed
+
+
+ [OK] Database schema updated successfully!
