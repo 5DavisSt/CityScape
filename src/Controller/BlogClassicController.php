@@ -11,7 +11,7 @@ class BlogClassicController extends AbstractController
     #[Route('/blog-classic', name: 'app_blog_classic')]
     public function index(): Response
     {
-        return $this->render('blog_classic/blog-classic.html.twig', [
+        return $this->render('blog_classic/blog_classic.html.twig', [
             'controller_name' => 'BlogClassicController',
 			'breadcrumb_title' => 'Blog Classic',
         ]);

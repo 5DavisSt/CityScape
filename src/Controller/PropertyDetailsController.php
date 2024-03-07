@@ -11,7 +11,7 @@ class PropertyDetailsController extends AbstractController
     #[Route('/property-details', name: 'app_property_details')]
     public function index(): Response
     {
-        return $this->render('property_details/property-details.html.twig', [
+        return $this->render('property_details/property_details.html.twig', [
             'controller_name' => 'PropertyDetailsController',
 			'breadcrumb_title' => 'Property Details',
         ]);

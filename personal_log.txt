@@ -799,3 +799,1651 @@ PS C:\Users\steve\cityscape> symfony console make:controller Contact
 
 
  Next: Open your new controller class and add some pages!
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:entity property
+ created: src/Entity/Property.php
+ created: src/Repository/PropertyRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > prop_id
+
+ Field type (enter ? to see all types) [integer]:
+ > ?
+
+Main Types
+  * string or ascii_string
+  * text
+  * boolean
+  * integer or smallint or bigint
+  * float
+
+Relationships/Associations
+  * relation a wizard will help you build the relation
+  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array or simple_array
+  * json
+  * object
+  * binary
+  * blob
+
+Date/Time Types
+  * datetime or datetime_immutable
+  * datetimetz or datetimetz_immutable
+  * date or date_immutable
+  * time or time_immutable
+  * dateinterval
+
+Other Types
+  * decimal
+  * guid
+
+
+ Field type (enter ? to see all types) [integer]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_housing_type
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_nb_rooms
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_nb_square_meters
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_location
+
+ Field type (enter ? to see all types) [string]:
+ > string
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_price
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > created_at
+
+ Field type (enter ? to see all types) [datetime_immutable]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_nb_beds
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_nb_baths
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_nb_spaces
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > prop_furnished
+
+ Field type (enter ? to see all types) [string]:
+ > boolean
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 2 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current
+      entity metadata.
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 2 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305105053.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+
+In ExceptionConverter.php line 117:
+
+  An exception occurred while executing a query: SQLSTATE[42000]: Syntax e
+  rror or access violation: 1075 Incorrect table definition; there can be
+  only one auto column and it must be defined as a key
+
+
+In Exception.php line 28:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1075 Incorrect table
+  definition; there can be only one auto column and it must be defined as
+  a key
+
+
+In Connection.php line 33:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1075 Incorrect table
+  definition; there can be only one auto column and it must be defined as
+  a key
+
+
+doctrine:schema:update [--em EM] [--complete] [--dump-sql] [-f|--force]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 3 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305105419.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+PS C:\Users\steve\cityscape> symfony console make:entity amenity
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > amen_prop_id
+
+ Field type (enter ? to see all types) [integer]:
+ > relation
+
+ What class should this entity be related to?:
+ > Property
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Amenity relates to (has) one Property.
+
+               Each Property can relate to (can have) many Amenity objects.
+
+
+
+  OneToMany    Each Amenity can relate to (can have) many Property objects.
+
+               Each Property relates to (has) one Amenity.
+
+
+
+  ManyToMany   Each Amenity can relate to (can have) many Property objects.
+
+               Each Property can also relate to (can also have) many Amenity objects.
+
+
+  OneToOne     Each Amenity relates to (has) exactly one Property.
+
+               Each Property also relates to (has) exactly one Amenity.
+
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToOne
+
+ Is the Amenity.amen_prop_id property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Property so that you can access/update Amenity objects from it - e.g. $property->getAmenity()? (yes/no) [no]:
+ >
+
+ updated: src/Entity/Amenity.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 4 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305114814.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     2 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 5 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305115610.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     5 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 6 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305132944.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     5 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:entity picture
+ created: src/Entity/Picture.php
+ created: src/Repository/PictureRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > pic_file
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_name
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_href
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_alt
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_caption
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_type
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_format
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_width
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_height
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_size
+
+ Field type (enter ? to see all types) [string]:
+ > ?
+
+Main Types
+  * string or ascii_string
+  * text
+  * boolean
+  * integer or smallint or bigint
+  * float
+
+Relationships/Associations
+  * relation a wizard will help you build the relation
+  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array or simple_array
+  * json
+  * object
+  * binary
+  * blob
+
+Date/Time Types
+  * datetime or datetime_immutable
+  * datetimetz or datetimetz_immutable
+  * date or date_immutable
+  * time or time_immutable
+  * dateinterval
+
+Other Types
+  * decimal
+  * guid
+
+
+ Field type (enter ? to see all types) [string]:
+ > decimal
+
+ Precision (total number of digits stored: 100.00 would be 5) [10]:
+ >
+
+ Scale (number of decimals to store: 100.00 would be 2) [0]:
+ > 2
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_property
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_property
+
+
+
+ [ERROR] The "pic_property" property already exists.
+
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > pic_property
+
+
+
+ [ERROR] The "pic_property" property already exists.
+
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 7 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305133932.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console make:entity picture
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > pic_property
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Property
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Picture relates to (has) one Property.
+
+               Each Property can relate to (can have) many Picture objects.
+
+
+
+  OneToMany    Each Picture can relate to (can have) many Property objects.
+
+               Each Property relates to (has) one Picture.
+
+
+
+  ManyToMany   Each Picture can relate to (can have) many Property objects.
+
+               Each Property can also relate to (can also have) many Picture objects.
+
+
+  OneToOne     Each Picture relates to (has) exactly one Property.
+
+               Each Property also relates to (has) exactly one Picture.
+
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Picture.pic_property property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Property so that you can access/update Picture objects from it - e.g. $property->getPictures()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity feature
+ created: src/Entity/Feature.php
+ created: src/Repository/FeatureRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > feat_title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Feature.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > feat_property
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Property
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Feature relates to (has) one Property.
+
+               Each Property can relate to (can have) many Feature objects.
+
+
+
+  OneToMany    Each Feature can relate to (can have) many Property objects.
+
+               Each Property relates to (has) one Feature.
+
+
+
+  ManyToMany   Each Feature can relate to (can have) many Property objects.
+
+               Each Property can also relate to (can also have) many Feature objects.
+
+
+  OneToOne     Each Feature relates to (has) exactly one Property.
+
+               Each Property also relates to (has) exactly one Feature.
+
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Feature.feat_property property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Property so that you can access/update Feature objects from it - e.g. $property->getFeatures()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Feature.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity country
+ created: src/Entity/Country.php
+ created: src/Repository/CountryRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > ct_name
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Country.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity address
+ created: src/Entity/Address.php
+ created: src/Repository/AddressRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > add_nb_street
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_address_line_1
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_address_line_2
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_city
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_state
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_zip
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_property
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Property
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Address relates to (has) one Property.
+
+               Each Property can relate to (can have) many Address objects.
+
+
+
+  OneToMany    Each Address can relate to (can have) many Property objects.
+
+               Each Property relates to (has) one Address.
+
+
+
+  ManyToMany   Each Address can relate to (can have) many Property objects.
+
+               Each Property can also relate to (can also have) many Address objects.
+
+
+  OneToOne     Each Address relates to (has) exactly one Property.
+
+               Each Property also relates to (has) exactly one Address.
+
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToOne
+
+ Is the Address.add_property property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Property so that you can access/update Address objects from it - e.g. $property->getAddress()? (yes/no) [no]:
+ > no
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > add_country
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Country
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------------
+  Type         Description
+
+ ------------ -----------------------------------------------------------------------
+  ManyToOne    Each Address relates to (has) one Country.
+
+               Each Country can relate to (can have) many Address objects.
+
+
+
+  OneToMany    Each Address can relate to (can have) many Country objects.
+
+               Each Country relates to (has) one Address.
+
+
+
+  ManyToMany   Each Address can relate to (can have) many Country objects.
+
+               Each Country can also relate to (can also have) many Address objects.
+
+
+  OneToOne     Each Address relates to (has) exactly one Country.
+
+               Each Country also relates to (has) exactly one Address.
+
+ ------------ -----------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Address.add_country property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Country so that you can access/update Address objects from it - e.g. $country->getAddresses()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity rent
+ created: src/Entity/Rent.php
+ created: src/Repository/RentRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > rent_start
+
+ Field type (enter ? to see all types) [string]:
+ > ?
+
+Main Types
+  * string or ascii_string
+  * text
+  * boolean
+  * integer or smallint or bigint
+  * float
+
+Relationships/Associations
+  * relation a wizard will help you build the relation
+  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array or simple_array
+  * json
+  * object
+  * binary
+  * blob
+
+Date/Time Types
+  * datetime or datetime_immutable
+  * datetimetz or datetimetz_immutable
+  * date or date_immutable
+  * time or time_immutable
+  * dateinterval
+
+Other Types
+  * decimal
+  * guid
+
+
+ Field type (enter ? to see all types) [string]:
+ > date
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > rent_end
+
+ Field type (enter ? to see all types) [string]:
+ > date
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > rent_price
+
+ Field type (enter ? to see all types) [string]:
+ > decimal
+
+ Precision (total number of digits stored: 100.00 would be 5) [10]:
+ >
+
+ Scale (number of decimals to store: 100.00 would be 2) [0]:
+ > 2
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > rent_user
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > User
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------
+  Type         Description
+
+ ------------ -----------------------------------------------------------------
+  ManyToOne    Each Rent relates to (has) one User.
+
+               Each User can relate to (can have) many Rent objects.
+
+
+
+  OneToMany    Each Rent can relate to (can have) many User objects.
+
+               Each User relates to (has) one Rent.
+
+
+
+  ManyToMany   Each Rent can relate to (can have) many User objects.
+
+               Each User can also relate to (can also have) many Rent objects.
+
+
+  OneToOne     Each Rent relates to (has) exactly one User.
+
+               Each User also relates to (has) exactly one Rent.
+
+ ------------ -----------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Rent.rent_user property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to User so that you can access/update Rent objects from it - e.g. $user->getRents()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > rent_property
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Property
+
+What type of relationship is this?
+ ------------ ---------------------------------------------------------------------
+  Type         Description
+
+ ------------ ---------------------------------------------------------------------
+  ManyToOne    Each Rent relates to (has) one Property.
+
+               Each Property can relate to (can have) many Rent objects.
+
+
+
+  OneToMany    Each Rent can relate to (can have) many Property objects.
+
+               Each Property relates to (has) one Rent.
+
+
+
+  ManyToMany   Each Rent can relate to (can have) many Property objects.
+
+               Each Property can also relate to (can also have) many Rent objects.
+
+
+  OneToOne     Each Rent relates to (has) exactly one Property.
+
+               Each Property also relates to (has) exactly one Rent.
+
+ ------------ ---------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Rent.rent_property property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Property so that you can access/update Rent objects from it - e.g. $property->getRents()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity project
+ created: src/Entity/Project.php
+ created: src/Repository/ProjectRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > proj_client
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_price
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_category
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_date
+
+ Field type (enter ? to see all types) [string]:
+ > date
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_facebook
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_twitter
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_linkedin
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_instagram
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 8 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305135607.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     12 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+PS C:\Users\steve\cityscape> symfony console make:entity project
+ created: src/Entity/Project.php
+ created: src/Repository/ProjectRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > proj_client
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_price
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_category
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_date
+
+ Field type (enter ? to see all types) [string]:
+ > date
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_facebook
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_twitter
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_linkedin
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_instagram
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > proj_title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Project.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 8 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305135607.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     12 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+PS C:\Users\steve\cityscape> composer require --dev symfony/phpunit-bridge
+./composer.json has been updated
+Running composer update symfony/phpunit-bridge
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+113 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^7.0 for symfony/phpunit-bridge
+PS C:\Users\steve\cityscape> ./bin/phpunit
+PS C:\Users\steve\cityscape> phpunit
+phpunit: The term 'phpunit' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\steve\cityscape> symfony phpunit
+
+  Command "phpunit" does not exist.
+
+PS C:\Users\steve\cityscape> symfony console phpunit
+
+
+  Command "phpunit" is not defined.
+
+
+PS C:\Users\steve\cityscape> bin/phpunit
+PS C:\Users\steve\cityscape> /bin/phpunit
+/bin/phpunit: The term '/bin/phpunit' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Suggestion [3,General]: The command "/bin/phpunit" was not found, but does exist in the current location.
+PowerShell does not load commands from the current location by default (see ''Get-Help about_Command_Precedence'').
+
+If you trust this command, run the following command instead:
+PS C:\Users\steve\cityscape> ./bin/phpunit
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 9 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240305162031.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+ 
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> composer require fakerphp/faker
+./composer.json has been updated
+Running composer update fakerphp/faker
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking fakerphp/faker (v1.23.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download fakerphp/faker from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing fakerphp/faker (v1.23.1) into cache
+  - Installing fakerphp/faker (v1.23.1): Cloning bfb4fe148a from cache
+Generating autoload files
+113 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^1.23 for fakerphp/faker
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape>

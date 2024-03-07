@@ -11,7 +11,7 @@ class BlogDetailsController extends AbstractController
     #[Route('/blog-details', name: 'app_blog_details')]
     public function index(): Response
     {
-        return $this->render('blog_details/blog-details.html.twig', [
+        return $this->render('blog_details/blog_details.html.twig', [
             'controller_name' => 'BlogDetailsController',
 			'breadcrumb_title' => 'Blog Details',
         ]);

@@ -5,7 +5,7 @@
             <div class="col-xl-4 col-lg-6">
                 <div class="footer-item">
                     <div class="footer-item__logo">
-                        <a href="index.html"> <img src="assets/images/logo/white-logo.png" alt=""></a>
+                        <a href="{{ path('app_home') }}"> <img src="{{ asset('assets/images/logo/white-logo.png') }}" alt=""></a>
                     </div>
                     <p class="footer-item__desc">It is a long established fact that a reader will be distracted</p>
                     
@@ -39,11 +39,11 @@
                 <div class="footer-item">
                     <h6 class="footer-item__title">Services</h6>
                     <ul class="footer-menu">
-                        <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Reliable Rentals </a></li>
-                        <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Golden Key Properties </a></li>
-                        <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Swift Home Sales </a></li>
-                        <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Elite Realty Services </a></li>
-                        <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Dream Property Solutions </a></li>
+                        <li class="footer-menu__item"><a href="{{ path('app_property') }}" class="footer-menu__link">Reliable Rentals </a></li>
+                        <li class="footer-menu__item"><a href="{{ path('app_property') }}" class="footer-menu__link">Golden Key Properties </a></li>
+                        <li class="footer-menu__item"><a href="{{ path('app_property') }}" class="footer-menu__link">Swift Home Sales </a></li>
+                        <li class="footer-menu__item"><a href="{{ path('app_property') }}" class="footer-menu__link">Elite Realty Services </a></li>
+                        <li class="footer-menu__item"><a href="{{ path('app_property') }}" class="footer-menu__link">Dream Property Solutions </a></li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="footer-links">
                 <a href="#" class="footer-link">Terms & Condition</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="contact.html" class="footer-link">Contact Us</a>
+                <a href="{{ path('app_contact') }}" class="footer-link">Contact Us</a>
             </div>
         </div>
     </div>

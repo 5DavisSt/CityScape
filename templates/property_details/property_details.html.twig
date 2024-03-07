@@ -10,22 +10,22 @@
                 <div class="row gy-4">
                     <div class="col-sm-12 col-6">
                         <div class="property-details__thumb">
-                            <img src="assets/images/thumbs/property-details-1.png" alt="" class="cover-img">
+                            <img src="{{ asset('assets/images/thumbs/property-details-1.png') }}" alt="" class="cover-img">
                         </div>
                     </div>
                     <div class="col-sm-4 col-6">
                         <div class="property-details__thumb">
-                            <img src="assets/images/thumbs/property-details-2.png" alt="" class="cover-img">
+                            <img src="{{ asset('assets/images/thumbs/property-details-2.png') }}" alt="" class="cover-img">
                         </div>
                     </div>
                     <div class="col-sm-4 col-6">
                         <div class="property-details__thumb">
-                            <img src="assets/images/thumbs/property-details-3.png" alt="" class="cover-img">
+                            <img src="{{ asset('assets/images/thumbs/property-details-3.png') }}" alt="" class="cover-img">
                         </div>
                     </div>
                     <div class="col-sm-4 col-6">
                         <div class="property-details__thumb">
-                            <img src="assets/images/thumbs/property-details-4.png" alt="" class="cover-img">
+                            <img src="{{ asset('assets/images/thumbs/property-details-4.png') }}" alt="" class="cover-img">
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities1.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities1.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Room</span>
@@ -48,7 +48,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities2.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities2.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Bed</span>
@@ -59,7 +59,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities3.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities3.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Bath</span>
@@ -70,7 +70,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities4.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities4.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Space</span>
@@ -81,7 +81,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities5.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities5.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Size</span>
@@ -92,7 +92,7 @@
                                 <div class="col-sm-4 col-6">
                                     <div class="amenities-content d-flex align-items-center">
                                         <span class="amenities-content__icon">
-                                            <img src="assets/images/icons/amenities6.svg" alt="">
+                                            <img src="{{ asset('assets/images/icons/amenities6.svg') }}" alt="">
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Property Type</span>
@@ -168,7 +168,7 @@
                         <h6 class="property-details-item__title">House</h6>
                         <div class="property-details-item__content">
                             <div class="house-content position-relative">
-                                <img src="assets/images/thumbs/house.png" alt="">
+                                <img src="{{ asset('assets/images/thumbs/house.png') }}" alt="">
                                 <a href="https://www.youtube.com/watch?v=pPl3ZZdTP3g" class="popup-video-link video-popup__button style-two">
                                     <i class="fas fa-play text-gradient"></i>
                                 </a>
@@ -183,25 +183,25 @@
     <h6 class="common-sidebar__title"> Category </h6>
     <ul class="category-list">
         <li class="category-list__item">
-            <a href="blog-classic.html" class="category-list__link flx-between">
+            <a href="{{ path('app_blog_classic') }}" class="category-list__link flx-between">
                 <span class="text">Prime Investments</span>
                 <span class="number">(1)</span>
             </a>
         </li>
         <li class="category-list__item">
-            <a href="blog-classic.html" class="category-list__link flx-between">
+            <a href="{{ path('app_blog_classic') }}" class="category-list__link flx-between">
                 <span class="text">ProHome Finders</span>
                 <span class="number"> (8) </span>
             </a>
         </li>
         <li class="category-list__item">
-            <a href="blog-classic.html" class="category-list__link flx-between">
+            <a href="{{ path('app_blog_classic') }}" class="category-list__link flx-between">
                 <span class="text">SmartHouse Agency</span>
                 <span class="number"> (3) </span>
             </a>
         </li>
         <li class="category-list__item">
-            <a href="blog-classic.html" class="category-list__link flx-between">
+            <a href="{{ path('app_blog_classic') }}" class="category-list__link flx-between">
                 <span class="text">Secure Property Partners</span>
                 <span class="number"> (5) </span>
             </a>
@@ -212,40 +212,40 @@
     <h6 class="common-sidebar__title"> Recent Post </h6>
     <div class="latest-blog">
         <div class="latest-blog__thumb">
-            <a href="blog-details.html"> <img src="assets/images/thumbs/latest-blog1.png" class="cover-img" alt=""></a>
+            <a href="{{ path('app_blog_details') }}"> <img src="{{ asset('assets/images/thumbs/latest-blog1.png') }}" class="cover-img" alt=""></a>
         </div>
         <div class="latest-blog__content">
             <span class="latest-blog__category font-12 flx-align gap-1">
                 <span class="icon text-gradient"><i class="fas fa-folder-open"></i></span>
              Category</span>
             <h6 class="latest-blog__title">
-                <a href="blog-details.html">A picture is worth standard and stand us return</a>
+                <a href="{{ path('app_blog_details') }}">A picture is worth standard and stand us return</a>
             </h6>
         </div>
     </div>
     <div class="latest-blog">
         <div class="latest-blog__thumb">
-            <a href="blog-details.html"> <img src="assets/images/thumbs/latest-blog2.png" class="cover-img" alt=""></a>
+            <a href="{{ path('app_blog_details') }}"> <img src="{{ asset('assets/images/thumbs/latest-blog2.png') }}" class="cover-img" alt=""></a>
         </div>
         <div class="latest-blog__content">
             <span class="latest-blog__category font-12 flx-align gap-1">
                 <span class="icon text-gradient"><i class="fas fa-folder-open"></i></span>
              Category</span>
             <h6 class="latest-blog__title">
-                <a href="blog-details.html">Your journ homeownership starts here</a>
+                <a href="{{ path('app_blog_details') }}">Your journ homeownership starts here</a>
             </h6>
         </div>
     </div>
     <div class="latest-blog">
         <div class="latest-blog__thumb">
-            <a href="blog-details.html"> <img src="assets/images/thumbs/latest-blog3.png" class="cover-img" alt=""></a>
+            <a href="{{ path('app_blog_details') }}"> <img src="{{ asset('assets/images/thumbs/latest-blog3.png') }}" class="cover-img" alt=""></a>
         </div>
         <div class="latest-blog__content">
             <span class="latest-blog__category font-12 flx-align gap-1">
                 <span class="icon text-gradient"><i class="fas fa-folder-open"></i></span>
              Category</span>
             <h6 class="latest-blog__title">
-                <a href="blog-details.html">Trust us to guide you the a through the process</a>
+                <a href="{{ path('app_blog_details') }}">Trust us to guide you the a through the process</a>
             </h6>
         </div>
     </div>
@@ -254,38 +254,38 @@
     <h6 class="common-sidebar__title"> Properties </h6>
     <div class="row gy-4">
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-1.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-1.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">Relax House</span>
             </a>
         </div>
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-2.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-2.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">Hunting Adventure</span>
             </a>
         </div>
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-3.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-3.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">Homeowner ship</span>
             </a>
         </div>
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-4.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-4.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">Real Dreams</span>
             </a>
         </div>
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-5.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-5.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">New Doors</span>
             </a>
         </div>
         <div class="col-lg-6 col-sm-4 col-6">
-            <a href="property.html" class="properties-item d-block w-100">
-                <img src="assets/images/thumbs/properties-6.png" alt="Property Image" class="cover-img">
+            <a href="{{ path('app_property') }}" class="properties-item d-block w-100">
+                <img src="{{ asset('assets/images/thumbs/properties-6.png') }}" alt="Property Image" class="cover-img">
                 <span class="properties-item__text">The Heart</span>
             </a>
         </div>

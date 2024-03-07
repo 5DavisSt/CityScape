@@ -29,8 +29,8 @@
         <nav class="header-inner flx-between">
             <!-- Logo Start -->
             <div class="logo">
-                <a href="index.html" class="link">
-                    <img src="assets/images/logo/logo.png" alt="Logo">
+                <a href="{{ path('app_home') }}" class="link">
+                    <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Logo">
                 </a>
             </div>
             <!-- Logo End  -->
@@ -69,31 +69,31 @@
         <a href="javascript:void(0)" class="nav-menu__link">Pages</a>
          <ul class="nav-submenu">
             <li class="nav-submenu__item">
-                <a href="property.html" class="nav-submenu__link"> Property</a>
+                <a href="{{ path('app_property') }}" class="nav-submenu__link"> Property</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="property-sidebar.html" class="nav-submenu__link"> Property Sidebar </a>
+                <a href="{{ path('app_property_sidebar') }}" class="nav-submenu__link"> Property Sidebar </a>
             </li>
             <li class="nav-submenu__item">
-                <a href="property-details.html" class="nav-submenu__link"> Property Details</a>
+                <a href="{{ path('app_property_details') }}" class="nav-submenu__link"> Property Details</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="add-listing.html" class="nav-submenu__link"> Add New Listing</a>
+                <a href="{{ path('app_add_new_listing') }}" class="nav-submenu__link"> Add New Listing</a>
             </li>
             <li class="nav-submenu__item">
                 <a href="map-location.html" class="nav-submenu__link"> Map Location</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="about.html" class="nav-submenu__link"> About Us</a>
+                <a href="{{ path('app_about') }}" class="nav-submenu__link"> About Us</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="faq.html" class="nav-submenu__link"> FAQ</a>
+                <a href="{{ path('app_faq') }}" class="nav-submenu__link"> FAQ</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="checkout.html" class="nav-submenu__link"> Checkout</a>
+                <a href="{{ path('app_checkout') }}" class="nav-submenu__link"> Checkout</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="cart.html" class="nav-submenu__link"> Cart</a>
+                <a href="{{ path('app_cart') }}" class="nav-submenu__link"> Cart</a>
             </li>
             <li class="nav-submenu__item">
                 <a href="login.html" class="nav-submenu__link"> Login</a>
@@ -107,10 +107,10 @@
         <a href="javascript:void(0)" class="nav-menu__link">Project</a>
          <ul class="nav-submenu">
             <li class="nav-submenu__item">
-                <a href="project.html" class="nav-submenu__link"> Project </a>
+                <a href="{{ path('app_project') }}" class="nav-submenu__link"> Project </a>
             </li>
             <li class="nav-submenu__item">
-                <a href="project-details.html" class="nav-submenu__link">Project Details</a>
+                <a href="{{ path('app_project_details') }}" class="nav-submenu__link">Project Details</a>
             </li>
         </ul>
     </li>
@@ -118,15 +118,15 @@
         <a href="javascript:void(0)" class="nav-menu__link">Blog</a>
          <ul class="nav-submenu">
             <li class="nav-submenu__item">
-                <a href="blog-classic.html" class="nav-submenu__link"> Blog Classic</a>
+                <a href="{{ path('app_blog_classic') }}" class="nav-submenu__link"> Blog Classic</a>
             </li>
             <li class="nav-submenu__item">
-                <a href="blog-details.html" class="nav-submenu__link"> Blog Details</a>
+                <a href="{{ path('app_blog_details') }}" class="nav-submenu__link"> Blog Details</a>
             </li>
         </ul>
     </li>
     <li class="nav-menu__item">
-        <a href="contact.html" class="nav-menu__link">Contact</a>
+        <a href="{{ path('app_contact') }}" class="nav-menu__link">Contact</a>
     </li>
 </ul>
             </div>
@@ -141,7 +141,7 @@
                         <path d="M10.0078 2.29297H30.0078" stroke="#181616" stroke-width="3"/>
                     </svg>
                 </button>
-                <a href="property-details.html" class="btn btn-outline-light d-lg-block d-none">Sell Property 
+                <a href="{{ path('app_property_details') }}" class="btn btn-outline-light d-lg-block d-none">Sell Property 
                     <span class="icon-right text-gradient icon"> 
                         <i class="fas fa-arrow-right"></i>
                      </span> 

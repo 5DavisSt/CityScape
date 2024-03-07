@@ -11,7 +11,7 @@ class PropertySidebarController extends AbstractController
     #[Route('/property-sidebar', name: 'app_property_sidebar')]
     public function index(): Response
     {
-        return $this->render('property_sidebar/property-sidebar.html.twig', [
+        return $this->render('property_sidebar/property_sidebar.html.twig', [
             'controller_name' => 'PropertySidebarController',
 			'breadcrumb_title' => 'Property With Sidebar',
         ]);
