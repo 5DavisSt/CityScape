@@ -29,6 +29,9 @@ class Picture
 
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
+
+    #[ORM\ManyToOne(inversedBy: 'picture')]
+    private ?Property $property = null;
 	
     public function getId(): ?int
     {
@@ -79,5 +82,17 @@ class Picture
     public function setImageSize(?int $imageSize): void
     {
         $this->imageSize = $imageSize;
+    }
+
+    public function getProperty(): ?Property
+    {
+        return $this->property;
+    }
+
+    public function setProperty(?Property $property): static
+    {
+        $this->property = $property;
+
+        return $this;
     }
 }

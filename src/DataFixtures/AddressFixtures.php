@@ -2,25 +2,35 @@
 
 namespace App\DataFixtures;
 
+use Faker\Factory;
 use App\Entity\Address;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class AddressFixtures extends Fixture
+class AddressFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-		// Creates 25 addresses
-        /* for ($i = 0; $i < 25; $i++) {
-            $address = new Address();
-            $address->setName('Address '.$i);
-            $address->setPrice(mt_rand(10, 100));
-            $manager->persist($address);
-        } */
-		
-        // $product = new Product();
-        // $manager->persist($product);
+		$faker = Factory::create("en_US");
 
+		// We create 25 new addresses
+        for ($i = 0; $i < 25; $i++) {
+            $address = new Address();
+            $address->setAddNbStreet($faker->buildingNumber());
+            $address->setAddAddressLine1($faker->streetName());
+            $address->setAddAddressLine2($faker->secondaryAddress());
+            $address->setAddCity($faker->city());
+            $address->setAddState($faker->state());
+            $address->setAddZip($faker->randomNumber(6, true));
+            $manager->persist($address);
+        }
+		
         $manager->flush();
+    }
+	
+	public function getDependencies()
+    {
+        return [PropertyFixtures::class, CountryFixtures::class];
     }
 }

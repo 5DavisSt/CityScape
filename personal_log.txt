@@ -2622,3 +2622,933 @@ PS C:\Users\steve\cityscape> symfony console d:s:u --force
 
 
  [OK] Database schema updated successfully!
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> composer require fakerphp/faker
+./composer.json has been updated
+Running composer update fakerphp/faker
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking fakerphp/faker (v1.23.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download fakerphp/faker from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing fakerphp/faker (v1.23.1) into cache
+  - Installing fakerphp/faker (v1.23.1): Cloning bfb4fe148a from cache
+Generating autoload files
+113 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^1.23 for fakerphp/faker
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> composer require vich/uploader-bundle
+./composer.json has been updated
+Running composer update vich/uploader-bundle
+Loading composer repositories with package information
+Restricting packages listed in "symfony/symfony" to "7.0.*"
+Updating dependencies
+Lock file operations: 2 installs, 0 updates, 0 removals
+  - Locking jms/metadata (2.8.0)
+  - Locking vich/uploader-bundle (2.3.1)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+    Failed to download jms/metadata from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing jms/metadata (2.8.0) into cache
+    Failed to download vich/uploader-bundle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing vich/uploader-bundle (2.3.1) into cache
+  - Installing jms/metadata (2.8.0): Cloning 7ca240dcac from cache
+  - Installing vich/uploader-bundle (2.3.1): Cloning f21f620502 from cache
+Generating autoload files
+113 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 1 recipe (b1c4e512c1bbad25c8b58fa3fb26f017)
+  -  WARNING  vich/uploader-bundle (>=1.13): From github.com/symfony/recipes-contrib:main
+    The recipe for this package comes from the "contrib" repository, which is open to community contributions.
+    Review the recipe at https://github.com/symfony/recipes-contrib/tree/main/vich/uploader-bundle/1.13
+
+    Do you want to execute this recipe?
+    [y] Yes
+    [n] No
+    [a] Yes for all packages, only for the current installation session
+    [p] Yes permanently, never ask again for this project
+    (defaults to n): y
+  - Configuring vich/uploader-bundle (>=1.13): From github.com/symfony/recipes-contrib:main
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+ What's next?
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+No security vulnerability advisories found.
+Using version ^2.3 for vich/uploader-bundle
+PS C:\Users\steve\cityscape> symfony console make:migration
+ParseError {#500
+  #message: "syntax error, unexpected double-quoted string "assets/", expecting identifier or variable or "{" or "$""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\AppFixtures.php"
+  #line: 92
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\AppFixtures.php:92 {
+      Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(string $class): void^
+      › $picture->setPicName($faker->word());
+      › $picture->setPicHref($faker->"assets/");
+      › $picture->setPicAlt($faker->sentence(5));
+    }
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 10 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+In MappingException.php line 420:
+
+  Duplicate definition of column 'created_at' on entity 'App\Entity\Property' in a field or discriminator column mapp
+  ing.
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 10 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307102258.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+
+In ExceptionConverter.php line 117:
+
+  An exception occurred while executing a query: SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid defa
+  ult value for 'created_at'
+
+
+In Exception.php line 28:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid default value for 'created_at'
+
+
+In Connection.php line 33:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1067 Invalid default value for 'created_at'
+
+
+doctrine:schema:update [--em EM] [--complete] [--dump-sql] [-f|--force]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 11 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307102508.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     2 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:entity property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > picture
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Picture
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Picture.
+               Each Picture can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Picture objects.
+               Each Picture relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Picture objects.
+               Each Picture can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Picture.
+               Each Picture also relates to (has) exactly one Property.
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToMany
+
+ A new property will also be added to the Picture class so that you can access and set the related Property object from it.
+
+ New field name inside Picture [property]:
+ >
+
+ Is the Picture.property property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Picture.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > category
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Category
+
+What type of relationship is this?
+ ------------ -------------------------------------------------------------------------
+  Type         Description
+ ------------ -------------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Category.
+               Each Category can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Category objects.
+               Each Category relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Category objects.
+               Each Category can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Category.
+               Each Category also relates to (has) exactly one Property.
+ ------------ -------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Property.category property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Category so that you can access/update Property objects from it - e.g. $category->getProperties()? (yes/no) [yes]:
+ >
+
+ A new property will also be added to the Category class so that you can access the related Property objects from it.
+
+ New field name inside Category [properties]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Category.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 12 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307104134.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     6 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:entity user
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > firstName
+
+ Field type (enter ? to see all types) [string]:
+ > string
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/User.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > lastName
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/User.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > userName
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/User.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 13 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240307104848.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 14 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+
+In Address.php line 112:
+
+  App\Entity\Address::setAddZip(): Argument #1 ($add_zip) must be of type int, string given, called in C:\Users\steve
+  \cityscape\src\DataFixtures\AddressFixtures.php on line 24
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_pr
+  operty_id' cannot be null
+
+
+In Exception.php line 28:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+In Statement.php line 130:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_pr
+  operty_id' cannot be null
+
+
+In Exception.php line 28:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+In Statement.php line 130:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "category_3" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#547
+  #message: "syntax error, unexpected variable "$this", expecting "function""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PropertyFixtures.php"
+  #line: 16
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PropertyFixtures.php:16 {
+      Composer\Autoload\{closure}^
+      › {
+      › \t$this->addReference("picture_".$i, Property::class);
+      › \t
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#544
+  #message: "Unclosed '{' on line 12"
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+  #line: 39
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php:39 {
+      Composer\Autoload\{closure}^
+      › }
+      › "in Composer\Autoload\{closure}"
+      ›
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> composer require easycorp/easyadmin-bundle
+./composer.json has been updated
+Running composer update easycorp/easyadmin-bundle
+Loading composer repositories with package information
+Restricting packages listed in "symfony/symfony" to "7.0.*"
+Updating dependencies
+Lock file operations: 3 installs, 0 updates, 0 removals
+  - Locking easycorp/easyadmin-bundle (v4.9.3)
+  - Locking symfony/polyfill-uuid (v1.29.0)
+  - Locking symfony/uid (v7.0.3)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 3 installs, 0 updates, 0 removals
+    Failed to download symfony/polyfill-uuid from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing symfony/polyfill-uuid (v1.29.0) into cache
+    Failed to download symfony/uid from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing symfony/uid (v7.0.3) into cache
+    Failed to download easycorp/easyadmin-bundle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing easycorp/easyadmin-bundle (v4.9.3) into cache
+  - Installing symfony/polyfill-uuid (v1.29.0): Cloning 3abdd21b0c from cache
+  - Installing symfony/uid (v7.0.3): Cloning 87cedaf3fa from cache
+  - Installing easycorp/easyadmin-bundle (v4.9.3): Cloning 9f9129ee2e from cache
+Generating autoload files
+116 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 2 recipes (d8cf104ba4f9186c00d8873dd59ad568)
+  - Configuring symfony/uid (>=7.0): From github.com/symfony/recipes:main
+  - Configuring easycorp/easyadmin-bundle (>=3.0): From github.com/symfony/recipes:main
+Executing script cache:clear [KO]
+ [KO]
+Script cache:clear returned with error code 255
+!!
+!!  Fatal error: Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load) in C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php on line 11
+!!  Symfony\Component\ErrorHandler\Error\FatalError {#547
+!!    #message: "Error: Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load)"
+!!    #code: 0
+!!    #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+!!    #line: 11
+!!    -error: array:4 [
+!!      "type" => 1
+!!      "message" => "Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load)"
+!!      "file" => "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+!!      "line" => 11
+!!    ]
+!!  }
+!!
+Script @auto-scripts was called via post-update-cmd
+PS C:\Users\steve\cityscape> composer require easycorp/easyadmin-bundle
+./composer.json has been updated
+Running composer update easycorp/easyadmin-bundle
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+116 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [KO]
+ [KO]
+Script cache:clear returned with error code 255
+!!
+!!  Fatal error: Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load) in C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php on line 10
+!!  Symfony\Component\ErrorHandler\Error\FatalError {#547
+!!    #message: "Error: Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load)"
+!!    #code: 0
+!!    #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+!!    #line: 10
+!!    -error: array:4 [
+!!      "type" => 1
+!!      "message" => "Class App\DataFixtures\PictureFixtures contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Doctrine\Common\DataFixtures\FixtureInterface::load)"
+!!      "file" => "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+!!      "line" => 10
+!!    ]
+!!  }
+!!
+Script @auto-scripts was called via post-update-cmd
+PS C:\Users\steve\cityscape> composer require easycorp/easyadmin-bundle
+./composer.json has been updated
+Running composer update easycorp/easyadmin-bundle
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+116 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^4.9 for easycorp/easyadmin-bundle
+PS C:\Users\steve\cityscape> php bin/console make:admin:dashboard
+
+ Which class name do you prefer for your Dashboard controller? [DashboardController]:
+ >
+
+ In which directory of your project do you want to generate "DashboardController"? [src/Controller/Admin/]:
+ >
+
+
+
+ [OK] Your dashboard class has been successfully generated.
+
+
+ Next steps:
+ * Configure your Dashboard at "src/Controller/Admin/DashboardController.php"
+ * Run "make:admin:crud" to generate CRUD controllers and link them from the Dashboard.
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "category_1" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "category_2" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "category_2" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "category_1" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 35:
+
+  Warning: Undefined variable $imageName
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 35:
+
+  Warning: Undefined variable $imageName
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 36:
+
+  Warning: file_put_contents(C:\C:\Users\steve\cityscape\public\assets\images\biens/688.jpg): Failed to open stream:
+  No such file or directory
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> php bin/console make:admin:crud
+
+ Which Doctrine entity are you going to manage with this CRUD controller?:
+  [0 ] App\Entity\Address
+  [1 ] App\Entity\Amenity
+  [2 ] App\Entity\Category
+  [3 ] App\Entity\Country
+  [4 ] App\Entity\Feature
+  [5 ] App\Entity\Picture
+  [6 ] App\Entity\Project
+  [7 ] App\Entity\Property
+  [8 ] App\Entity\Rent
+  [9 ] App\Entity\ResetPasswordRequest
+  [10] App\Entity\User
+  [11] Vich\UploaderBundle\Entity\File
+ > 10
+
+ Which directory do you want to generate the CRUD controller in? [src/Controller/Admin/]:
+ >
+
+ Namespace of the generated CRUD controller [App\Controller\Admin]:
+ >
+
+
+ [OK] Your CRUD controller class has been successfully generated.
+
+
+ Next steps:
+ * Configure your controller at "src/Controller/Admin/UserCrudController.php"
+ * Read EasyAdmin docs: https://symfony.com/doc/master/bundles/EasyAdminBundle/index.html
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+
+In CountryFixtures.php line 19:
+
+  Attempted to call function "randomElement" from namespace "App\DataFixtures".
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+
+In ProjectFixtures.php line 19:
+
+  Unsupported operand types: null | string
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> php bin/console assets:install --symlink
+
+ Trying to install assets as absolute symbolic links.
+
+ --------- ----------------- ----------------
+            Bundle            Method / Error
+ --------- ----------------- ----------------
+  WARNING   EasyAdminBundle   copy
+ --------- ----------------- ----------------
+
+ ! [NOTE] Some assets were installed via copy. If you make changes to these assets you have to run this command again.
+
+
+ [OK] All assets were successfully installed.
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In UserFixtures.php line 19:
+
+  Unsupported operand types: null | string
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\AddressFixtures
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_pr
+  operty_id' cannot be null
+
+
+In Exception.php line 28:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+In Statement.php line 130:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'add_property_id' cannot be null
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+

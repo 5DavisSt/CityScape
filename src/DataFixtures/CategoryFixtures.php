@@ -11,13 +11,14 @@ class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+		$faker = Factory::create("en_US");
+
 		// "Pages" category
         /* $pages = new Category();
 		$pages->setName("Pages");
 		$pages->setSlug("pages");
 		$pages->setMetaTitle($faker->sentence(5));
 		$pages->setMetaDescription($faker->paragraph());
-		$pages->setParent($pages);
         $manager->persist($pages);
 		
         $property = new Category();
@@ -33,7 +34,7 @@ class CategoryFixtures extends Fixture
 		$propertySide->setSlug("property-side");
 		$propertySide->setMetaTitle($faker->sentence(5));
 		$propertySide->setMetaDescription($faker->paragraph());
-		$propertySide->setParent($property);
+		$propertySide->setParent($pages);
         $manager->persist($propertySide);
 		
         $propertyDetails = new Category();
@@ -41,7 +42,7 @@ class CategoryFixtures extends Fixture
 		$propertyDetails->setSlug("property-details");
 		$propertyDetails->setMetaTitle($faker->sentence(5));
 		$propertyDetails->setMetaDescription($faker->paragraph());
-		$propertyDetails->setParent($property);
+		$propertyDetails->setParent($pages);
         $manager->persist($propertyDetails);
 		
         $addNewListing = new Category();
@@ -89,18 +90,17 @@ class CategoryFixtures extends Fixture
 		$project->setSlug("project");
 		$project->setMetaTitle($faker->sentence(5));
 		$project->setMetaDescription($faker->paragraph());
-		$project->setParent($project);
-        $manager->persist($project); */
+        $manager->persist($project);
 
-/*         $projectSide = new Category();
+		$projectSide = new Category();
 		$projectSide->setName("Project");
 		$projectSide->setSlug("project-side");
 		$projectSide->setMetaTitle($faker->sentence(5));
 		$projectSide->setMetaDescription($faker->paragraph());
 		$projectSide->setParent($project);
         $manager->persist($projectSide);
- */
-        /* $projectDetails = new Category();
+
+		$projectDetails = new Category();
 		$projectDetails->setName("Project Details");
 		$projectDetails->setSlug("project-details");
 		$projectDetails->setMetaTitle($faker->sentence(5));
@@ -113,7 +113,6 @@ class CategoryFixtures extends Fixture
 		$blog->setSlug("blog");
 		$blog->setMetaTitle($faker->sentence(5));
 		$blog->setMetaDescription($faker->paragraph());
-		$blog->setParent($blog);
         $manager->persist($blog);
 
         $blogClassic = new Category();
@@ -130,8 +129,76 @@ class CategoryFixtures extends Fixture
 		$blogDetails->setMetaTitle($faker->sentence(5));
 		$blogDetails->setMetaDescription($faker->paragraph());
 		$blogDetails->setParent($blog);
-        $manager->persist($blogDetails); */
+        $manager->persist($blogDetails);
 
-        $manager->flush();
+        $contact = new Contact();
+		$contact->setName("Contact Us");
+		$contact->setSlug("contact");
+		$contact->setMetaTitle($faker->sentence(5));
+		$contact->setMetaDescription($faker->paragraph());
+        $manager->persist($contact); */
+		
+        $categories = [
+            [
+                'main_categories' => 'Page',
+                'sub_category_array' => [
+                    'Property',
+                    'Property Sidebar',
+                    'Property Details',
+                    'Add New Listing',
+                    'About Us',
+                    'FAQ',
+                    'CheckOut',
+                    'Cart'
+                ]
+            ],
+        
+            [
+                'main_categories' => 'Projects',
+                'sub_category_array' => [
+                    'Project',
+                    'Project Details'
+                ]
+            ],
+        
+            [
+                'main_categories' => 'Blog',
+                'sub_category_array' => [
+                    'Blog Classic',
+                    'Blog Details'
+                ]
+            ],
+        
+            [
+                'main_categories' => 'Contact Us',
+                'sub_category_array' => []
+            ],
+        
+        ];
+
+        foreach ($categories as $z => $subArray) {
+            $mainCategory = new Category();
+            $mainCategory->setName($subArray['main_categories']);
+            $mainCategory->setSlug($faker->slug());
+            $mainCategory->setMetaTitle($faker->sentence(5));
+            $mainCategory->setMetaDescription($faker->paragraph());
+            $manager->persist($mainCategory);
+            
+            foreach ($subArray['sub_category_array'] as $k => $subCategoryName) {
+                $subCategory = new Category();
+                $subCategory->setName($subCategoryName);
+                $subCategory->setSlug($faker->slug());
+                $subCategory->setMetaTitle($faker->sentence(5));
+                $subCategory->setMetaDescription($faker->paragraph());
+                $subCategory->setParent($mainCategory);
+                $manager->persist($subCategory);
+
+                $this->setReference('category_' . $k, $subCategory);
+			};
+
+            $manager->flush();
+        };
+		
+        // $manager->flush();
     }
 }

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Traits\TimestampTraits;
 use App\Repository\PropertyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PropertyRepository::class)]
@@ -12,9 +14,9 @@ class Property
 	use TimestampTraits;
 	
 	#[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+	#[ORM\GeneratedValue]
+	#[ORM\Column]
+	private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $prop_housing_type = null;
@@ -39,6 +41,17 @@ class Property
 
     #[ORM\Column(nullable: true)]
     private ?bool $prop_furnished = null;
+
+    #[ORM\OneToMany(targetEntity: Picture::class, mappedBy: 'property')]
+    private Collection $picture;
+
+    #[ORM\ManyToOne(inversedBy: 'properties')]
+    private ?Category $category = null;
+
+    public function __construct()
+    {
+        $this->picture = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +150,48 @@ class Property
     public function setPropFurnished(?bool $prop_furnished): static
     {
         $this->prop_furnished = $prop_furnished;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Picture>
+     */
+    public function getPicture(): Collection
+    {
+        return $this->picture;
+    }
+
+    public function addPicture(Picture $picture): static
+    {
+        if (!$this->picture->contains($picture)) {
+            $this->picture->add($picture);
+            $picture->setProperty($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): static
+    {
+        if ($this->picture->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getProperty() === $this) {
+                $picture->setProperty(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }

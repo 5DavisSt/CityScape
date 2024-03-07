@@ -21,22 +21,22 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-		$faker = Factory::create("en_US");
+		//$faker = Factory::create("en_US");
 
 		// We call the entities without any foreign keys first, then the rest
 		
 		// We create 25 new users
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $user = new User();
             $user->setEmail($faker->email());
             $user->setRoles($faker->randomElements(["admin", "client"]));
             $user->setPassword($faker->password());
             $user->setIsVerified($faker->boolean());
             $manager->persist($user);
-        }
+        }*/
 
 		// We create 25 new properties
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $property = new Property();
             $property->setPropHousingType($faker->randomElement(["house", "single_family", "apartment", "office", "villa", "luxury_home", "studio"]));
             $property->setPropNbRooms($faker->numberBetween(0, 100));
@@ -48,17 +48,17 @@ class AppFixtures extends Fixture
             $property->setPropNbSpaces($faker->numberBetween(0, 100));
             $property->setPropFurnished($faker->boolean());
             $manager->persist($property);
-        }
+        }*/
 
 		// We create 25 new countries
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $country = new Country();
             $country->setCtName(randomElement(["bangladesh", "japan", "korea", "singapore", "germany", "thailand"]));
             $manager->persist($country);
-        }
+        }*/
 
 		// We create 25 new projects
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $project = new Project();
             $project->setProjClient($faker->name($gender = null|"male"|"female"));
             $project->setProjPrice($faker->numberBetween(0, 10000000));
@@ -70,10 +70,10 @@ class AppFixtures extends Fixture
             $project->setProjInstagram("https://instagram.com/");
             $project->setProjTitle($faker->sentence(5));
             $manager->persist($project);
-        }
+        }*/
 		
 		// We create 25 new amenities
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $amenity = new Amenity();
             $amenity->setAmenDishwasher($faker->boolean());
             $amenity->setAmenFloorCoverings($faker->boolean());
@@ -82,10 +82,10 @@ class AppFixtures extends Fixture
             $amenity->setAmenSupermarket($faker->boolean());
             $amenity->setAmenKidsZone($faker->boolean());
             $manager->persist($amenity);
-        }
+        }*/
 		
 		// We create 25 new pictures
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $picture = new Picture();
             $picture->setPicFile($faker->word());
             $picture->setPicName($faker->word());
@@ -98,17 +98,17 @@ class AppFixtures extends Fixture
             $picture->setPicHeight($faker->numberBetween(0, 1080));
             $picture->setPicSize($faker->randomFloat(2));
             $manager->persist($picture);
-        }
+        }*/
 
 		// We create 25 new features
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $feature = new Feature();
             $feature->setFeatTitle($faker->sentence(5));
             $manager->persist($feature);
-        }
+        }*/
 		
 		// We create 25 new addresses
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $address = new Address();
             $address->setAddNbStreet($faker->buildingNumber());
             $address->setAddAddressLine1($faker->streetName());
@@ -117,16 +117,16 @@ class AppFixtures extends Fixture
             $address->setAddState($faker->state());
             $address->setAddZip($faker->postcode());
             $manager->persist($address);
-        }
+        }*/
 		
 		// We create 25 new renting files
-        for ($i = 0; $i < 25; $i++) {
+        /*for ($i = 0; $i < 25; $i++) {
             $rent = new Rent();
             $rent->setRentStart($faker->dateTime());
             $rent->setRentEnd($faker->dateTime());
             $rent->setRentPrice($faker->numberBetween(0, 10000000));
             $manager->persist($rent);
-        }
+        }*/
 		
         $manager->flush();
     }
