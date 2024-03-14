@@ -3552,3 +3552,1769 @@ In Statement.php line 130:
 
 doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
 
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+Installez la dernière version de PowerShell pour de nouvelles fonctionnalités et améliorations ! https://aka.ms/PSWindows
+
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:entity property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > amenity
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Amenity
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Amenity.
+               Each Amenity can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Amenity objects.
+               Each Amenity relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Amenity objects.
+               Each Amenity can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Amenity.
+               Each Amenity also relates to (has) exactly one Property.
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToOne
+
+ Is the Property.amenity property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Amenity so that you can access/update Property objects from it - e.g. $amenity->getProperty()? (yes/no) [no]:
+ > yes
+
+ A new property will also be added to the Amenity class so that you can access the related Property object from it.
+
+ New field name inside Amenity [property]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Amenity.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > feature
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Feature
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Feature.
+               Each Feature can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Feature objects.
+               Each Feature relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Feature objects.
+               Each Feature can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Feature.
+               Each Feature also relates to (has) exactly one Property.
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToMany
+
+ A new property will also be added to the Feature class so that you can access and set the related Property object from it.
+
+ New field name inside Feature [property]:
+ >
+
+ Is the Feature.property property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Feature.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > address
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Address
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------
+  Type         Description
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Address.
+               Each Address can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Address objects.
+               Each Address relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Address objects.
+               Each Address can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Address.
+               Each Address also relates to (has) exactly one Property.
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToOne
+
+ Is the Property.address property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Address so that you can access/update Property objects from it - e.g. $address->getProperty()? (yes/no) [no]:
+ > yes
+
+ A new property will also be added to the Address class so that you can access the related Property object from it.
+
+ New field name inside Address [property]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > rent
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Rent
+
+What type of relationship is this?
+ ------------ ---------------------------------------------------------------------
+  Type         Description
+ ------------ ---------------------------------------------------------------------
+  ManyToOne    Each Property relates to (has) one Rent.
+               Each Rent can relate to (can have) many Property objects.
+
+  OneToMany    Each Property can relate to (can have) many Rent objects.
+               Each Rent relates to (has) one Property.
+
+  ManyToMany   Each Property can relate to (can have) many Rent objects.
+               Each Rent can also relate to (can also have) many Property objects.
+
+  OneToOne     Each Property relates to (has) exactly one Rent.
+               Each Rent also relates to (has) exactly one Property.
+ ------------ ---------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToMany
+
+ A new property will also be added to the Rent class so that you can access and set the related Property object from it.
+
+ New field name inside Rent [property]:
+ >
+
+ Is the Rent.property property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ updated: src/Entity/Property.php
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity user
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > rent
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Rent
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------
+  Type         Description
+ ------------ -----------------------------------------------------------------
+  ManyToOne    Each User relates to (has) one Rent.
+               Each Rent can relate to (can have) many User objects.
+
+  OneToMany    Each User can relate to (can have) many Rent objects.
+               Each Rent relates to (has) one User.
+
+  ManyToMany   Each User can relate to (can have) many Rent objects.
+               Each Rent can also relate to (can also have) many User objects.
+
+  OneToOne     Each User relates to (has) exactly one Rent.
+               Each Rent also relates to (has) exactly one User.
+ ------------ -----------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToMany
+
+ A new property will also be added to the Rent class so that you can access and set the related User object from it.
+
+ New field name inside Rent [user]:
+ >
+
+ Is the Rent.user property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ updated: src/Entity/User.php
+ updated: src/Entity/Rent.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity country
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > address
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Address
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------------
+  Type         Description
+ ------------ -----------------------------------------------------------------------
+  ManyToOne    Each Country relates to (has) one Address.
+               Each Address can relate to (can have) many Country objects.
+
+  OneToMany    Each Country can relate to (can have) many Address objects.
+               Each Address relates to (has) one Country.
+
+  ManyToMany   Each Country can relate to (can have) many Address objects.
+               Each Address can also relate to (can also have) many Country objects.
+
+  OneToOne     Each Country relates to (has) exactly one Address.
+               Each Address also relates to (has) exactly one Country.
+ ------------ -----------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > OneToMany
+
+ A new property will also be added to the Address class so that you can access and set the related Country object from it.
+
+ New field name inside Address [country]:
+ >
+
+ Is the Address.country property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ updated: src/Entity/Country.php
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is already running
+
+
+Local Web Server
+    Listening on https://127.0.0.1:8000
+    The Web server is using PHP CGI 8.3.2 (from default version in $PATH)
+
+Local Domains
+
+Workers
+    PID 19508: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php-cgi.exe -b 53516 -d error_log=C:\Users\steve\.symfony5\log\fcf673b1e970f3ea28b459126dbf29eb906b9bd7.log
+
+Environment Variables
+    None
+PS C:\Users\steve\cityscape>
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:admin:crud Picture
+
+
+  No arguments expected for "make:admin:crud" command, got "Picture".
+
+
+make:admin:crud
+
+PS C:\Users\steve\cityscape> symfony console m:a:c
+
+In ExceptionConverter.php line 101:
+
+  An exception occurred in the driver: SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur c
+  ible l’a expressément refusée
+
+
+In Exception.php line 28:
+
+  SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+
+In Driver.php line 33:
+
+  SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+
+make:admin:crud
+
+PS C:\Users\steve\cityscape> symfony console make:admin:crud
+
+In ExceptionConverter.php line 101:
+
+  An exception occurred in the driver: SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur c
+  ible l’a expressément refusée
+
+
+In Exception.php line 28:
+
+  SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+
+In Driver.php line 33:
+
+  SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+
+make:admin:crud
+
+PS C:\Users\steve\cityscape> symfony console m:a:c
+
+ Which Doctrine entity are you going to manage with this CRUD controller?:
+  [0 ] App\Entity\Address
+  [1 ] App\Entity\Amenity
+  [2 ] App\Entity\Category
+  [3 ] App\Entity\Country
+  [4 ] App\Entity\Feature
+  [5 ] App\Entity\Picture
+  [6 ] App\Entity\Project
+  [7 ] App\Entity\Property
+  [8 ] App\Entity\Rent
+  [9 ] App\Entity\ResetPasswordRequest
+  [10] App\Entity\User
+  [11] Vich\UploaderBundle\Entity\File
+ > 5
+
+ Which directory do you want to generate the CRUD controller in? [src/Controller/Admin/]:
+ >
+
+ Namespace of the generated CRUD controller [App\Controller\Admin]:
+ >
+
+
+ [OK] Your CRUD controller class has been successfully generated.
+
+
+ Next steps:
+ * Configure your controller at "src/Controller/Admin/PictureCrudController.php"
+ * Read EasyAdmin docs: https://symfony.com/doc/master/bundles/EasyAdminBundle/index.html
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 19 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ParseError {#570
+  #message: "syntax error, unexpected token ";", expecting ")""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PropertyFixtures.php"
+  #line: 30
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PropertyFixtures.php:30 {
+      Composer\Autoload\{closure}^
+      ›             $property->setPropFurnished($faker->boolean());
+      ›             $property->addPicture($this->getReference(PictureFixtures::PICTURE_REFERENCE);
+      › \t\t\t//$property->setCategory($this->getReference('category_'.$ii));
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 30:
+
+  Undefined constant App\DataFixtures\PictureFixtures::PICTURE_REFERENCE
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PropertyFixtures
+
+In ReferenceRepository.php line 226:
+
+  Reference to "picture" does not exist
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AddressFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\AmenityFixtures
+   > loading App\DataFixtures\FeatureFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AddressFixtures
+PS C:\Users\steve\cityscape>
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony console serve -d
+Symfony 7.0.4 (env: dev, debug: true)
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+  -e, --env=ENV         The Environment name. [default: "dev"]
+      --no-debug        Switch off debug mode.
+      --profile         Enables profiling (requires debug).
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands for the "server" namespace:
+  server:dump  Start a dump server that collects and displays dumps in a single place
+  server:log   Start a log server that displays logs in real time
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     22 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\CountryFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 33:
+
+  Non-static method App\DataFixtures\PictureFixtures::load() cannot be called statically
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console make:entity Address
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > addCountry
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Address.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity Property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > propFeature
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ >
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 21 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240313153010.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     32 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+
+In Property.php line 68:
+
+  Cannot assign Doctrine\Common\Collections\ArrayCollection to property App\Entity\Property::$propFeature of type ?ar
+  ray
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape>
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape>
+
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> composer require twig/intl-extra
+./composer.json has been updated
+Running composer update twig/intl-extra
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking twig/intl-extra (v3.8.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download twig/intl-extra from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing twig/intl-extra (v3.8.0) into cache
+  - Installing twig/intl-extra (v3.8.0): Cloning 7b3db67c70 from cache
+Generating autoload files
+117 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^3.8 for twig/intl-extra
+PS C:\Users\steve\cityscape> composer require symfony/ux-toggle-password
+./composer.json has been updated
+Running composer update symfony/ux-toggle-password
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking symfony/ux-toggle-password (v2.16.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download symfony/ux-toggle-password from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing symfony/ux-toggle-password (v2.16.0) into cache
+  - Installing symfony/ux-toggle-password (v2.16.0): Cloning dc96508e29 from cache
+Generating autoload files
+118 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 1 recipe (0e5ab8e37d4acd41f779885fa7f7c551)
+  - Configuring symfony/ux-toggle-password (>=v2.16.0): From auto-generated recipe
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+ What's next?
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+No security vulnerability advisories found.
+Using version ^2.16 for symfony/ux-toggle-password
+PS C:\Users\steve\cityscape> composer require scheb/2fa-bundle
+./composer.json has been updated
+Running composer update scheb/2fa-bundle
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking scheb/2fa-bundle (v7.2.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download scheb/2fa-bundle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing scheb/2fa-bundle (v7.2.0) into cache
+  - Installing scheb/2fa-bundle (v7.2.0): Cloning 3eac1a44af from cache
+Generating autoload files
+118 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 1 recipe (e0742dc4d4fe18ae3c3ed0c1b120c0c0)
+  - Configuring scheb/2fa-bundle (>=6.0): From github.com/symfony/recipes:main
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+ What's next?
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+No security vulnerability advisories found.
+Using version ^7.2 for scheb/2fa-bundle
+PS C:\Users\steve\cityscape> composer require scheb/2fa-email
+./composer.json has been updated
+Running composer update scheb/2fa-email
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 1 install, 0 updates, 0 removals
+  - Locking scheb/2fa-email (v7.2.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+    Failed to download scheb/2fa-email from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing scheb/2fa-email (v7.2.0) into cache
+  - Installing scheb/2fa-email (v7.2.0): Cloning de479da649 from cache
+Generating autoload files
+118 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^7.2 for scheb/2fa-email
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 22 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240314145910.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email'
+   cannot be null
+
+
+In Exception.php line 28:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
+
+
+In Statement.php line 130:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'email' cannot be null
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 23 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape>
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In UserFixtures.php line 22:
+
+  Attempted to call an undefined method named "setUserEmail" of class "App\Entity\User".
+  Did you mean to call e.g. "setEmail" or "setUserName"?
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 23 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:entity Property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > propSlug
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 23 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240314152057.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'prop_s
+  lug' cannot be null
+
+
+In Exception.php line 28:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'prop_slug' cannot be null
+
+
+In Statement.php line 130:
+
+  SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'prop_slug' cannot be null
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console make:entity Property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > propAddress
+
+
+
+ [ERROR] The "propAddress" property already exists.
+
+
+ New property name (press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 24 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 24 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240314153804.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In UserFixtures.php line 25:
+
+  Attempted to call an undefined method named "setUserIsVerified" of class "App\Entity\User".
+  Did you mean to call "setIsVerified"?
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console d:f:l -append
+
+
+  The "-a" option does not exist.
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l --append
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+
+In PictureFixtures.php line 21:
+
+  Warning: file_get_contents(https://picsum.photos/1290/584): Failed to open stream: HTTP request failed! HTTP/1.1 52
+  0
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 25 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240314170920.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l --append
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In UserFixtures.php line 22:
+
+  Warning: Undefined property: App\DataFixtures\UserFixtures::$userPasswordHasher
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> composer require symfony/password-hasher
+./composer.json has been updated
+Running composer update symfony/password-hasher
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+118 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+
+In UserFixtures.php line 22:
+
+  Warning: Undefined property: App\DataFixtures\UserFixtures::$userPasswordHasher
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#580
+  #message: "syntax error, unexpected token "{", expecting "(""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php"
+  #line: 13
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php:13 {
+      Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(string $class): void^
+      › {
+      › \tpublic function __construct {
+      › \t\tprivate UserPasswordHasherInterface $userPasswordHasher;
+    }
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#580
+  #message: "syntax error, unexpected token ";", expecting ")""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php"
+  #line: 14
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php:14 {
+      Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(string $class): void^
+      › public function __construct (
+      › \tprivate UserPasswordHasherInterface $userPasswordHasher;
+      › )
+    }
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:migration
+ParseError {#582
+  #message: "syntax error, unexpected token ";", expecting ")""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php"
+  #line: 39
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\UserFixtures.php:39 {
+      Composer\Autoload\{closure}^
+      › //$user->setRoles($faker->randomElements(['ROLE_ADMIN', 'ROLE_USER']));
+      › $user->setPassword(($this->userPasswordHasher->hashPassword($user, $faker->password()));
+      › $user->setIsVerified($faker->boolean());
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 26 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape>
+

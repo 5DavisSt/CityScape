@@ -11,7 +11,7 @@ class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-		$faker = Factory::create("en_US");
+		$faker = Factory::create('en_US');
 
 		// "Pages" category
         /* $pages = new Category();
@@ -178,18 +178,18 @@ class CategoryFixtures extends Fixture
 
         foreach ($categories as $z => $subArray) {
             $mainCategory = new Category();
-            $mainCategory->setName($subArray['main_categories']);
-            $mainCategory->setSlug($faker->slug());
-            $mainCategory->setMetaTitle($faker->sentence(5));
-            $mainCategory->setMetaDescription($faker->paragraph());
+            $mainCategory->setCatName($subArray['main_categories']);
+            $mainCategory->setCatSlug($faker->slug());
+            $mainCategory->setCatMetaTitle($faker->sentence(5));
+            $mainCategory->setCatMetaDescription($faker->sentence(7));
             $manager->persist($mainCategory);
             
             foreach ($subArray['sub_category_array'] as $k => $subCategoryName) {
                 $subCategory = new Category();
-                $subCategory->setName($subCategoryName);
-                $subCategory->setSlug($faker->slug());
-                $subCategory->setMetaTitle($faker->sentence(5));
-                $subCategory->setMetaDescription($faker->paragraph());
+                $subCategory->setCatName($subCategoryName);
+                $subCategory->setCatSlug($faker->slug());
+                $subCategory->setCatMetaTitle($faker->sentence(5));
+                $subCategory->setCatMetaDescription($faker->sentence(7));
                 $subCategory->setParent($mainCategory);
                 $manager->persist($subCategory);
 

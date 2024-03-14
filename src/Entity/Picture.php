@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: PictureRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
 class Picture
 {
@@ -21,17 +22,17 @@ class Picture
     private ?int $id = null;
 
     // NOTE: This is not a mapped field of entity metadata, just a simple property.
-    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
-    private ?File $imageFile = null;
+    #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'picName', size: 'picSize')]
+    private ?File $picFile = null;
 
     #[ORM\Column(nullable: true)]
-    private ?string $imageName = null;
+    private ?string $picName = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $imageSize = null;
+    private ?int $picSize = null;
 
     #[ORM\ManyToOne(inversedBy: 'picture')]
-    private ?Property $property = null;
+    private ?Property $picProperty = null;
 	
     public function getId(): ?int
     {
@@ -48,50 +49,50 @@ class Picture
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
 	
-    public function getImageFile(): ?File
+    public function getPicFile(): ?File
     {
-        return $this->imageFile;
+        return $this->picFile;
     }
 	
-    public function setImageFile(?File $imageFile = null): void
+    public function setPicFile(?File $picFile = null): void
     {
-        $this->imageFile = $imageFile;
+        $this->picFile = $picFile;
 
-        if (null !== $imageFile) {
+        if (null !== $picFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
 
-    public function getImageName(): ?string
+    public function getPicName(): ?string
     {
-        return $this->imageName;
+        return $this->picName;
     }
 
-    public function setImageName(?string $imageName): void
+    public function setPicName(?string $picName): void
     {
-        $this->imageName = $imageName;
+        $this->picName = $picName;
     }
 
-    public function getImageSize(): ?int
+    public function getPicSize(): ?int
     {
-        return $this->imageSize;
+        return $this->picSize;
     }
 	
-    public function setImageSize(?int $imageSize): void
+    public function setPicSize(?int $picSize): void
     {
-        $this->imageSize = $imageSize;
+        $this->picSize = $picSize;
     }
 
-    public function getProperty(): ?Property
+    public function getPicProperty(): ?Property
     {
-        return $this->property;
+        return $this->picProperty;
     }
 
-    public function setProperty(?Property $property): static
+    public function setPicProperty(?Property $picProperty): static
     {
-        $this->property = $property;
+        $this->picProperty = $picProperty;
 
         return $this;
     }

@@ -2,20 +2,32 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Scheb\TwoFactorBundle\Model\Email\TwoFactorInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFactorInterface
 {
+	use TimestampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(type: "string", nullable: true)]
+    private ?string $authCode;
+
+    #[ORM\Column(length: 255)]
+    private ?string $userName = null;
 
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
@@ -41,12 +53,53 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $userName = null;
+    #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'user')]
+    private Collection $userRent;
+
+    public function __construct()
+    {
+        $this->userRent = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+	public function isEmailAuthEnabled(): bool
+    {
+        return true; // This can be a persisted field to switch email code authentication on/off
+    }
+
+    public function getEmailAuthRecipient(): string
+    {
+        return $this->email;
+    }
+
+    public function getEmailAuthCode(): string
+    {
+        if (null === $this->authCode) {
+            throw new \LogicException('The email authentication code was not set');
+        }
+
+        return $this->authCode;
+    }
+
+    public function setEmailAuthCode(string $authCode): void
+    {
+        $this->authCode = $authCode;
+    }
+
+    public function getUserName(): ?string
+    {
+        return $this->userName;
+    }
+
+    public function setUserName(string $userName): static
+    {
+        $this->userName = $userName;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -155,14 +208,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getUserName(): ?string
+    /**
+     * @return Collection<int, Rent>
+     */
+    public function getUserRent(): Collection
     {
-        return $this->userName;
+        return $this->userRent;
     }
 
-    public function setUserName(string $userName): static
+    public function addUserRent(Rent $userRent): static
     {
-        $this->userName = $userName;
+        if (!$this->userRent->contains($userRent)) {
+            $this->userRent->add($userRent);
+            $rent->setRentUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserRent(Rent $userRent): static
+    {
+        if ($this->userRent->removeElement($userRent)) {
+            // set the owning side to null (unless already changed)
+            if ($userRent->getRentUser() === $this) {
+                $userRent->setRentUser(null);
+            }
+        }
 
         return $this;
     }

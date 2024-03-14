@@ -9,16 +9,19 @@ trait TimestampTraits
 	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
 	private \DateTimeInterface $createdAt;
 
-	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]	
+	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
 	private \DateTimeInterface $updatedAt;
+
+	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
+	private \DateTimeInterface $deletedAt;
 	
 	public function getCreatedAt(): \DateTimeInterface
 	{
 		return $this->createdAt;
 	}
 	
-	#[ORM\prePersist]
-	public function setCreatedAt(\DateTimeImmutable $createdAt): void
+	#[ORM\PrePersist]
+	public function setCreatedAt(): void
 	{
 		$this->createdAt = new \DateTimeImmutable;
 	}
@@ -28,9 +31,20 @@ trait TimestampTraits
 		return $this->updatedAt;
 	}
 	
-	#[ORM\preUpdate]
-	public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
+	#[ORM\PreUpdate]
+	public function setUpdatedAt(): void
 	{
 		$this->updatedAt = new \DateTimeImmutable;
+	}
+
+	public function getDeletedAt(): \DateTimeInterface
+	{
+		return $this->deletedAt;
+	}
+	
+	#[ORM\PreRemove]
+	public function setDeletedAt(): void
+	{
+		$this->deletedAt = new \DateTimeImmutable;
 	}
 }

@@ -1,0 +1,21 @@
+{% if ea.crud.currentAction == 'detail' %}
+    <ul class="list-group">
+        {% for picture in field.value %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ picture.updatedAt | date }}
+            <span class="badge badge-primary"> </span>
+            <img style="width: 100%" src="{{ asset('assets/images/properties/' ~ picture.picName) }}" alt="">  </span>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <ul class="list-group">
+        {% for picture in field.value %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ picture.id }}
+            <span class="badge badge-primary"> </span>
+            <img style="width: 100%" src="{{ asset('assets/images/properties/' ~ picture.picName) }}" alt="">  </span>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

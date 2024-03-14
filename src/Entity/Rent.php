@@ -15,21 +15,19 @@ class Rent
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $rent_start = null;
+    private ?\DateTimeInterface $rentStart = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $rent_end = null;
+    private ?\DateTimeInterface $rentEnd = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
-    private ?string $rent_price = null;
+    private ?string $rentPrice = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $rent_user = null;
+    #[ORM\ManyToOne(inversedBy: 'rent')]
+    private ?User $rentUser = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Property $rent_property = null;
+    #[ORM\ManyToOne(inversedBy: 'rent')]
+    private ?Property $rentProperty = null;
 
     public function getId(): ?int
     {
@@ -38,60 +36,60 @@ class Rent
 
     public function getRentStart(): ?\DateTimeInterface
     {
-        return $this->rent_start;
+        return $this->rentStart;
     }
 
-    public function setRentStart(\DateTimeInterface $rent_start): static
+    public function setRentStart(\DateTimeInterface $rentStart): static
     {
-        $this->rent_start = $rent_start;
+        $this->rentStart = $rentStart;
 
         return $this;
     }
 
     public function getRentEnd(): ?\DateTimeInterface
     {
-        return $this->rent_end;
+        return $this->rentEnd;
     }
 
-    public function setRentEnd(\DateTimeInterface $rent_end): static
+    public function setRentEnd(\DateTimeInterface $rentEnd): static
     {
-        $this->rent_end = $rent_end;
+        $this->rentEnd = $rentEnd;
 
         return $this;
     }
 
     public function getRentPrice(): ?string
     {
-        return $this->rent_price;
+        return $this->rentPrice;
     }
 
-    public function setRentPrice(string $rent_price): static
+    public function setRentPrice(string $rentPrice): static
     {
-        $this->rent_price = $rent_price;
+        $this->rentPrice = $rentPrice;
 
         return $this;
     }
 
     public function getRentUser(): ?User
     {
-        return $this->rent_user;
+        return $this->rentUser;
     }
 
-    public function setRentUser(?User $rent_user): static
+    public function setRentUser(?User $rentUser): static
     {
-        $this->rent_user = $rent_user;
+        $this->rentUser = $rentUser;
 
         return $this;
     }
-
+	
     public function getRentProperty(): ?Property
     {
-        return $this->rent_property;
+        return $this->rentProperty;
     }
 
-    public function setRentProperty(?Property $rent_property): static
+    public function setRentProperty(?Property $rentProperty): static
     {
-        $this->rent_property = $rent_property;
+        $this->rentProperty = $rentProperty;
 
         return $this;
     }

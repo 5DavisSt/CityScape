@@ -2,38 +2,40 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\AmenityRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AmenityRepository::class)]
 class Amenity
 {
+	use TimestampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?bool $amen_dishwasher = null;
+    private ?bool $amenDishwasher = null;
 
     #[ORM\Column]
-    private ?bool $amen_floor_coverings = null;
+    private ?bool $amenFloorCoverings = null;
 
     #[ORM\Column]
-    private ?bool $amen_internet = null;
+    private ?bool $amenInternet = null;
 
     #[ORM\Column]
-    private ?bool $amen_wardrobes = null;
+    private ?bool $amenWardrobes = null;
 
     #[ORM\Column]
-    private ?bool $amen_supermarket = null;
+    private ?bool $amenSupermarket = null;
 
     #[ORM\Column]
-    private ?bool $amen_kids_zone = null;
+    private ?bool $amenKidsZone = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Property $amen_property = null;
+    #[ORM\OneToOne(mappedBy: 'amenity', cascade: ['persist', 'remove'])]
+    private ?Property $amenProperty = null;
 
     public function getId(): ?int
     {
@@ -42,84 +44,94 @@ class Amenity
 
     public function isAmenDishwasher(): ?bool
     {
-        return $this->amen_dishwasher;
+        return $this->amenDishwasher;
     }
 
-    public function setAmenDishwasher(bool $amen_dishwasher): static
+    public function setAmenDishwasher(bool $amenDishwasher): static
     {
-        $this->amen_dishwasher = $amen_dishwasher;
+        $this->amenDishwasher = $amenDishwasher;
 
         return $this;
     }
 
     public function isAmenFloorCoverings(): ?bool
     {
-        return $this->amen_floor_coverings;
+        return $this->amenFloorCoverings;
     }
 
-    public function setAmenFloorCoverings(bool $amen_floor_coverings): static
+    public function setAmenFloorCoverings(bool $amenFloorCoverings): static
     {
-        $this->amen_floor_coverings = $amen_floor_coverings;
+        $this->amenFloorCoverings = $amenFloorCoverings;
 
         return $this;
     }
 
     public function isAmenInternet(): ?bool
     {
-        return $this->amen_internet;
+        return $this->amenInternet;
     }
 
-    public function setAmenInternet(bool $amen_internet): static
+    public function setAmenInternet(bool $amenInternet): static
     {
-        $this->amen_internet = $amen_internet;
+        $this->amenInternet = $amenInternet;
 
         return $this;
     }
 
     public function isAmenWardrobes(): ?bool
     {
-        return $this->amen_wardrobes;
+        return $this->amenWardrobes;
     }
 
-    public function setAmenWardrobes(bool $amen_wardrobes): static
+    public function setAmenWardrobes(bool $amenWardrobes): static
     {
-        $this->amen_wardrobes = $amen_wardrobes;
+        $this->amenWardrobes = $amenWardrobes;
 
         return $this;
     }
 
     public function isAmenSupermarket(): ?bool
     {
-        return $this->amen_supermarket;
+        return $this->amenSupermarket;
     }
 
-    public function setAmenSupermarket(bool $amen_supermarket): static
+    public function setAmenSupermarket(bool $amenSupermarket): static
     {
-        $this->amen_supermarket = $amen_supermarket;
+        $this->amenSupermarket = $amenSupermarket;
 
         return $this;
     }
 
     public function isAmenKidsZone(): ?bool
     {
-        return $this->amen_kids_zone;
+        return $this->amenKidsZone;
     }
 
-    public function setAmenKidsZone(bool $amen_kids_zone): static
+    public function setAmenKidsZone(bool $amenKidsZone): static
     {
-        $this->amen_kids_zone = $amen_kids_zone;
+        $this->amenKidsZone = $amenKidsZone;
 
         return $this;
     }
 
     public function getAmenProperty(): ?Property
     {
-        return $this->amen_property;
+        return $this->amenProperty;
     }
 
-    public function setAmenProperty(Property $amen_property): static
+    public function setAmenProperty(?Property $amenProperty): static
     {
-        $this->amen_property = $amen_property;
+        // unset the owning side of the relation if necessary
+        if ($amenProperty === null && $this->amenProperty !== null) {
+            $this->amenProperty->setPropAmenity(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($amenProperty !== null && $amenProperty->getPropAmenity() !== $this) {
+            $amenProperty->setPropAmenity($this);
+        }
+
+        $this->amenProperty = $amenProperty;
 
         return $this;
     }

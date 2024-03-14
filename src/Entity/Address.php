@@ -2,42 +2,43 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\AddressRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AddressRepository::class)]
 class Address
 {
+	use TimestampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $add_nb_street = null;
+    private ?int $addNbStreet = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $add_address_line_1 = null;
+    private ?string $addAddressLine1 = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $add_address_line_2 = null;
+    private ?string $addAddressLine2 = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $add_city = null;
+    private ?string $addCity = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $add_state = null;
+    private ?string $addState = null;
 
     #[ORM\Column]
-    private ?int $add_zip = null;
+    private ?int $addZip = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Property $add_property = null;
+    #[ORM\Column(length: 255)]
+    private ?string $addCountry = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Country $add_country = null;
+    #[ORM\OneToOne(mappedBy: 'address', cascade: ['persist', 'remove'])]
+    private ?Property $addProperty = null;
 
     public function getId(): ?int
     {
@@ -46,96 +47,106 @@ class Address
 
     public function getAddNbStreet(): ?int
     {
-        return $this->add_nb_street;
+        return $this->addNbStreet;
     }
 
-    public function setAddNbStreet(int $add_nb_street): static
+    public function setAddNbStreet(int $addNbStreet): static
     {
-        $this->add_nb_street = $add_nb_street;
+        $this->addNbStreet = $addNbStreet;
 
         return $this;
     }
 
     public function getAddAddressLine1(): ?string
     {
-        return $this->add_address_line_1;
+        return $this->addAddressLine1;
     }
 
-    public function setAddAddressLine1(string $add_address_line_1): static
+    public function setAddAddressLine1(string $addAddressLine1): static
     {
-        $this->add_address_line_1 = $add_address_line_1;
+        $this->addAddressLine1 = $addAddressLine1;
 
         return $this;
     }
 
     public function getAddAddressLine2(): ?string
     {
-        return $this->add_address_line_2;
+        return $this->addAddressLine2;
     }
 
-    public function setAddAddressLine2(?string $add_address_line_2): static
+    public function setAddAddressLine2(?string $addAddressLine2): static
     {
-        $this->add_address_line_2 = $add_address_line_2;
+        $this->addAddressLine2 = $addAddressLine2;
 
         return $this;
     }
 
     public function getAddCity(): ?string
     {
-        return $this->add_city;
+        return $this->addCity;
     }
 
-    public function setAddCity(string $add_city): static
+    public function setAddCity(string $addCity): static
     {
-        $this->add_city = $add_city;
+        $this->addCity = $addCity;
 
         return $this;
     }
 
     public function getAddState(): ?string
     {
-        return $this->add_state;
+        return $this->addState;
     }
 
-    public function setAddState(string $add_state): static
+    public function setAddState(string $addState): static
     {
-        $this->add_state = $add_state;
+        $this->addState = $addState;
 
         return $this;
     }
 
     public function getAddZip(): ?int
     {
-        return $this->add_zip;
+        return $this->addZip;
     }
 
-    public function setAddZip(int $add_zip): static
+    public function setAddZip(int $addZip): static
     {
-        $this->add_zip = $add_zip;
+        $this->addZip = $addZip;
+
+        return $this;
+    }
+	
+    public function getAddCountry(): ?string
+    {
+        return $this->addCountry;
+    }
+
+    public function setAddCountry(string $addCountry): static
+    {
+        $this->addCountry = $addCountry;
 
         return $this;
     }
 
     public function getAddProperty(): ?Property
     {
-        return $this->add_property;
+        return $this->addProperty;
     }
 
-    public function setAddProperty(Property $add_property): static
+    public function setAddProperty(?Property $addProperty): static
     {
-        $this->add_property = $add_property;
+        // unset the owning side of the relation if necessary
+        if ($addProperty === null && $this->addProperty !== null) {
+            $this->addProperty->setPropAddress(null);
+        }
 
-        return $this;
-    }
+        // set the owning side of the relation if necessary
+        if ($addProperty !== null && $addProperty->getPropAddress() !== $this) {
+            $addProperty->setPropAddress($this);
+        }
 
-    public function getAddCountry(): ?Country
-    {
-        return $this->add_country;
-    }
-
-    public function setAddCountry(?Country $add_country): static
-    {
-        $this->add_country = $add_country;
+        $this->addProperty = $addProperty;
 
         return $this;
     }

@@ -6,13 +6,12 @@ use Faker\Factory;
 use App\Entity\Address;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class AddressFixtures extends Fixture implements DependentFixtureInterface
+class AddressFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-		$faker = Factory::create("en_US");
+		$faker = Factory::create('en_US');
 
 		// We create 25 new addresses
         for ($i = 0; $i < 25; $i++) {
@@ -23,14 +22,10 @@ class AddressFixtures extends Fixture implements DependentFixtureInterface
             $address->setAddCity($faker->city());
             $address->setAddState($faker->state());
             $address->setAddZip($faker->randomNumber(6, true));
+            $address->setAddCountry($faker->randomElement(['bangladesh', 'japan', 'korea', 'singapore', 'germany', 'thailand']));
             $manager->persist($address);
         }
 		
         $manager->flush();
-    }
-	
-	public function getDependencies()
-    {
-        return [PropertyFixtures::class, CountryFixtures::class];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,22 +11,24 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
 {
+	use TimestampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $catName = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $slug = null;
+    private ?string $catSlug = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $metaTitle = null;
+    private ?string $catMetaTitle = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $metaDescription = null;
+    private ?string $catMetaDescription = null;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'categories')]
     private ?self $parent = null;
@@ -34,12 +37,12 @@ class Category
     private Collection $categories;
 
     #[ORM\OneToMany(targetEntity: Property::class, mappedBy: 'category')]
-    private Collection $properties;
+    private Collection $catProperties;
 
     public function __construct()
     {
         $this->categories = new ArrayCollection();
-        $this->properties = new ArrayCollection();
+        $this->catProperties = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -47,50 +50,50 @@ class Category
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getCatName(): ?string
     {
-        return $this->name;
+        return $this->catName;
     }
 
-    public function setName(string $name): static
+    public function setCatName(string $catName): static
     {
-        $this->name = $name;
+        $this->catName = $catName;
 
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getCatSlug(): ?string
     {
-        return $this->slug;
+        return $this->catSlug;
     }
 
-    public function setSlug(string $slug): static
+    public function setCatSlug(string $catSlug): static
     {
-        $this->slug = $slug;
+        $this->catSlug = $catSlug;
 
         return $this;
     }
 
-    public function getMetaTitle(): ?string
+    public function getCatMetaTitle(): ?string
     {
-        return $this->metaTitle;
+        return $this->catMetaTitle;
     }
 
-    public function setMetaTitle(string $metaTitle): static
+    public function setCatMetaTitle(string $catMetaTitle): static
     {
-        $this->metaTitle = $metaTitle;
+        $this->catMetaTitle = $catMetaTitle;
 
         return $this;
     }
 
-    public function getMetaDescription(): ?string
+    public function getCatMetaDescription(): ?string
     {
-        return $this->metaDescription;
+        return $this->catMetaDescription;
     }
 
-    public function setMetaDescription(string $metaDescription): static
+    public function setCatMetaDescription(string $catMetaDescription): static
     {
-        $this->metaDescription = $metaDescription;
+        $this->catMetaDescription = $catMetaDescription;
 
         return $this;
     }
@@ -140,27 +143,27 @@ class Category
     /**
      * @return Collection<int, Property>
      */
-    public function getProperties(): Collection
+    public function getCatProperties(): Collection
     {
-        return $this->properties;
+        return $this->catProperties;
     }
 
-    public function addProperty(Property $property): static
+    public function addCatProperty(Property $catProperty): static
     {
-        if (!$this->properties->contains($property)) {
-            $this->properties->add($property);
-            $property->setCategory($this);
+        if (!$this->catProperties->contains($catProperty)) {
+            $this->catProperties->add($catProperty);
+            $catProperty->setPropCategory($this);
         }
 
         return $this;
     }
 
-    public function removeProperty(Property $property): static
+    public function removeCatProperty(Property $catProperty): static
     {
-        if ($this->properties->removeElement($property)) {
+        if ($this->catProperties->removeElement($catProperty)) {
             // set the owning side to null (unless already changed)
-            if ($property->getCategory() === $this) {
-                $property->setCategory(null);
+            if ($catProperty->getPropCategory() === $this) {
+                $catProperty->setPropCategory(null);
             }
         }
 

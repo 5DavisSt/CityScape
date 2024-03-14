@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\TimestampTraits;
 use App\Repository\ProjectRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,147 +10,149 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 class Project
 {
+	use TimestampTraits;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $proj_client = null;
+    private ?string $projTitle = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $projClient = null;
 
     #[ORM\Column]
-    private ?int $proj_price = null;
+    private ?int $projPrice = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $proj_category = null;
+    #[ORM\Column]
+    private ?array $projCategory = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $proj_date = null;
+    private ?\DateTimeInterface $projDate = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $proj_facebook = null;
+    private ?string $projFacebook = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $proj_twitter = null;
+    private ?string $projTwitter = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $proj_linkedin = null;
+    private ?string $projLinkedin = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $proj_instagram = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $proj_title = null;
+    private ?string $projInstagram = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
+	
+    public function getProjTitle(): ?string
+    {
+        return $this->projTitle;
+    }
+
+    public function setProjTitle(string $projTitle): static
+    {
+        $this->projTitle = $projTitle;
+
+        return $this;
+    }
 
     public function getProjClient(): ?string
     {
-        return $this->proj_client;
+        return $this->projClient;
     }
 
-    public function setProjClient(string $proj_client): static
+    public function setProjClient(string $projClient): static
     {
-        $this->proj_client = $proj_client;
+        $this->projClient = $projClient;
 
         return $this;
     }
 
     public function getProjPrice(): ?int
     {
-        return $this->proj_price;
+        return $this->projPrice;
     }
 
-    public function setProjPrice(int $proj_price): static
+    public function setProjPrice(int $projPrice): static
     {
-        $this->proj_price = $proj_price;
+        $this->projPrice = $projPrice;
 
         return $this;
     }
 
-    public function getProjCategory(): ?string
+    public function getProjCategory(): ?array
     {
-        return $this->proj_category;
+        return $this->projCategory;
     }
 
-    public function setProjCategory(string $proj_category): static
+    public function setProjCategory(array $projCategory): static
     {
-        $this->proj_category = $proj_category;
+        $this->projCategory = $projCategory;
 
         return $this;
     }
 
     public function getProjDate(): ?\DateTimeInterface
     {
-        return $this->proj_date;
+        return $this->projDate;
     }
 
-    public function setProjDate(\DateTimeInterface $proj_date): static
+    public function setProjDate(\DateTimeInterface $projDate): static
     {
-        $this->proj_date = $proj_date;
+        $this->projDate = $projDate;
 
         return $this;
     }
 
     public function getProjFacebook(): ?string
     {
-        return $this->proj_facebook;
+        return $this->projFacebook;
     }
 
-    public function setProjFacebook(?string $proj_facebook): static
+    public function setProjFacebook(?string $projFacebook): static
     {
-        $this->proj_facebook = $proj_facebook;
+        $this->projFacebook = $projFacebook;
 
         return $this;
     }
 
     public function getProjTwitter(): ?string
     {
-        return $this->proj_twitter;
+        return $this->projTwitter;
     }
 
-    public function setProjTwitter(?string $proj_twitter): static
+    public function setProjTwitter(?string $projTwitter): static
     {
-        $this->proj_twitter = $proj_twitter;
+        $this->projTwitter = $projTwitter;
 
         return $this;
     }
 
     public function getProjLinkedin(): ?string
     {
-        return $this->proj_linkedin;
+        return $this->projLinkedin;
     }
 
-    public function setProjLinkedin(?string $proj_linkedin): static
+    public function setProjLinkedin(?string $projLinkedin): static
     {
-        $this->proj_linkedin = $proj_linkedin;
+        $this->projLinkedin = $projLinkedin;
 
         return $this;
     }
 
     public function getProjInstagram(): ?string
     {
-        return $this->proj_instagram;
+        return $this->projInstagram;
     }
 
-    public function setProjInstagram(?string $proj_instagram): static
+    public function setProjInstagram(?string $projInstagram): static
     {
-        $this->proj_instagram = $proj_instagram;
-
-        return $this;
-    }
-
-    public function getProjTitle(): ?string
-    {
-        return $this->proj_title;
-    }
-
-    public function setProjTitle(string $proj_title): static
-    {
-        $this->proj_title = $proj_title;
+        $this->projInstagram = $projInstagram;
 
         return $this;
     }

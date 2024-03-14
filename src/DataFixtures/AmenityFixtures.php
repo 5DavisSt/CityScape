@@ -12,7 +12,7 @@ class AmenityFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-		$faker = Factory::create("en_US");
+		$faker = Factory::create('en_US');
 
 		// We create 25 new amenities
         for ($i = 0; $i < 25; $i++) {
