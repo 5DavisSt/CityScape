@@ -20,6 +20,7 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
 		// We create 25 new properties
         for ($i = 1; $i < 26; $i++) {
             $property = new Property();
+            $property->setPropTitle($faker->sentence(5));
             $property->setPropHousingType($faker->randomElement(['house', 'single_family', 'apartment', 'office', 'villa', 'luxury_home', 'studio']));
             $property->setPropNbRooms($faker->numberBetween(0, 100));
             $property->setPropSqm($faker->numberBetween(0, 100000));
@@ -28,8 +29,8 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property->setPropNbBaths($faker->numberBetween(0, 100));
             $property->setPropNbSpaces($faker->numberBetween(0, 100));
             $property->setPropFurnished($faker->boolean());
-            $property->setPropSlug($faker->slug());
-			//$property->setCategory($this->getReference('category_'.$ii));
+            $property->setPropSlug('slug'.$property->getPropTitle());
+			$property->setPropCategory($this->getReference('category_'.rand(1, 5)));
 			
 			for ($j = 1; $j < 4; $j++) {
 				$property->addPropPicture($this->getReference('picture'.rand(1, 50)));

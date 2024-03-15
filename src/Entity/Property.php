@@ -16,9 +16,9 @@ class Property
 	use TimestampTraits;
 	
 	#[ORM\Id]
-         	#[ORM\GeneratedValue]
-         	#[ORM\Column]
-         	private ?int $id = null;
+	#[ORM\GeneratedValue]
+	#[ORM\Column]
+	private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $propHousingType = null;
@@ -64,6 +64,9 @@ class Property
 
     #[ORM\Column(length: 255)]
     private ?string $propSlug = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $propTitle = null;
 
     public function __construct()
     {
@@ -288,6 +291,18 @@ class Property
     public function setPropSlug(string $propSlug): static
     {
         $this->propSlug = $propSlug;
+
+        return $this;
+    }
+
+    public function getPropTitle(): ?string
+    {
+        return $this->propTitle;
+    }
+
+    public function setPropTitle(string $propTitle): static
+    {
+        $this->propTitle = $propTitle;
 
         return $this;
     }

@@ -53,7 +53,7 @@
 		{% include '_partials/_canvas.html.twig' %}
 		
 		<main class="body-bg">
-			{% include '_partials/_header_top.html.twig' %}
+			{{ render (controller ('App\\Controller\\Menu\\MenuController::menu')) }}
 			{% block body %}{% endblock %}
 			{% include '_partials/_footer.html.twig' %}
 		</main>

@@ -193,7 +193,7 @@ class CategoryFixtures extends Fixture
                 $subCategory->setParent($mainCategory);
                 $manager->persist($subCategory);
 
-                $this->setReference('category_' . $k, $subCategory);
+                $this->setReference('category_'.$k, $subCategory);
 			};
 
             $manager->flush();
