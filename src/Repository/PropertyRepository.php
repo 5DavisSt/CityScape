@@ -24,6 +24,11 @@ class PropertyRepository extends ServiceEntityRepository
 	public function filterPropertyByCategory(): ?array
 	{
 		return $this->createQueryBuilder('p')
+		/*->join('p.propCategory', 'm')
+		->andWhere('m.propSlug = :val')
+		->setParameter('val', $subMenu)
+		->andWhere('m.id = :id')
+		->setParameter('id', $id)*/
 		->getQuery()
 		->getResult()
 		;

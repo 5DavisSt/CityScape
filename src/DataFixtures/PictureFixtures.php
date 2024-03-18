@@ -14,20 +14,23 @@ class PictureFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
 		// We create 50 new pictures
-		for ($i = 1; $i < 51; $i++) {
-			$url ='https://picsum.photos/1290/584';
-			$picName = rand(1,1000).'.jpg';
-			$img = 'C:\Users\steve\cityscape\public\assets\images\properties/'.$picName;
-			file_put_contents($img, file_get_contents($url));
+		// for ($i = 1; $i < 51; $i++) {
+			// $url = file_get_contents('https://loremflickr.com/985/584/house');
+			// $picName = rand(1,1000).'.jpg';
+			// $img = 'C:\Users\steve\cityscape\public\assets\images\properties/'.$picName;
+			
+			// while (!file_exists('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName)) {
+				// file_put_contents('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName, $url);
+			// }
+			
+			// $picture = new Picture();
+			// $picture->setPicName($picName);
+			// $picture->setPicProperty($picture);
 
-			$picture = new Picture();
-			$picture->setPicName($picName);
-			//$picture->setProperty($picture->property);
+			// $this->setReference('picture'.$i, $picture);
 
-			$this->setReference('picture'.$i, $picture);
-
-			$manager->persist($picture);
-		};
+			// $manager->persist($picture);
+		//};
 		
         $manager->flush();
     }

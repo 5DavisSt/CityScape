@@ -39,13 +39,16 @@
             <div class="header-menu d-lg-block d-none">
                 
 <ul class="nav-menu flx-align ">
+    <li class="nav-menu__item">
+        <a href="{{ path('app_home') }}" class="nav-menu__link">Home</a>
+    </li>
 {% for category in categories %}
     <li class="nav-menu__item has-submenu">
-        <a href="javascript:void(0)" class="nav-menu__link">{{ category.catName }}</a>
+        <a href="{{ path('app_' ~ category.catName) }}" class="nav-menu__link">{{ category.catTitle }}</a>
         <ul class="nav-submenu">
-		{% for sb in category.categories %}
+		{% for subCategory in category.categories %}
             <li class="nav-submenu__item">
-                <a href="/{{ sb.catSlug }}" class="nav-submenu__link">{{ sb.catName }}</a>
+                <a href="{{ path('app_' ~ category.catName, { 'slug': subCategory.catSlug }) }}" class="nav-submenu__link">{{ subCategory.catTitle }}</a>
             </li>
 		{% endfor %}
         </ul>

@@ -5318,3 +5318,434 @@ PS C:\Users\steve\cityscape> symfony console d:f:l -n
    > loading App\DataFixtures\AmenityFixtures
 PS C:\Users\steve\cityscape>
 
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ INFO  A new Symfony CLI version is available (5.8.12, currently running 5.8.11).
+
+       If you installed the Symfony CLI via a package manager, updates are going to be automatic.
+       If not, upgrade by downloading the new version at https://github.com/symfony-cli/symfony-cli/releases
+       And replace the current binary (symfony.exe) by the new one.
+
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#536
+  #message: "Unclosed '{' on line 22 does not match ')'"
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+  #line: 23
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php:23 {
+      Composer\Autoload\{closure}^
+      › while (!file_exists('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName)) {
+      › \tfile_put_contents('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName));
+      › }
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+
+In PictureFixtures.php line 18:
+
+  Warning: file_get_contents(https://picsum.photos/985/584/house): Failed to open stream: HTTP request failed! HTTP/1
+  .1 404 Not Found
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+
+In PictureFixtures.php line 28:
+
+  Warning: Undefined property: App\Entity\Picture::$property
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+
+In PictureFixtures.php line 23:
+
+  file_put_contents() expects at least 2 arguments, 1 given
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+
+In PropertyFixtures.php line 37:
+
+  Attempted to call an undefined method named "setPropPicture" of class "App\Entity\Property".
+  Did you mean to call e.g. "addPropPicture", "getPropFeature", "getPropPicture", "setPropFeature", "setPropPrice" or
+   "setPropTitle"?
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+
+In Picture.php line 93:
+
+  App\Entity\Picture::setPicProperty(): Argument #1 ($picProperty) must be of type ?App\Entity\Property, App\Entity\P
+  icture given, called in C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php on line 28
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#536
+  #message: "syntax error, unexpected token ";", expecting "function""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+  #line: 33
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php:33 {
+      Composer\Autoload\{closure}^
+      › \t// $manager->persist($picture);
+      › };
+      ›
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is already running
+
+
+Local Web Server
+    Listening on https://127.0.0.1:8000
+    The Web server is using PHP CGI 8.3.2 (from default version in $PATH)
+
+Local Domains
+
+Workers
+    PID 11896: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php-cgi.exe -b 49824 -d error_log=C:\Users\steve\.symfony5\log\fcf673b1e970f3ea28b459126dbf29eb906b9bd7.log
+
+Environment Variables
+    None
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+ParseError {#536
+  #message: "syntax error, unexpected token ";", expecting "function""
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php"
+  #line: 33
+  trace: {
+    C:\Users\steve\cityscape\src\DataFixtures\PictureFixtures.php:33 {
+      Composer\Autoload\{closure}^
+      › \t// $manager->persist($picture);
+      › };
+      ›
+    }
+    C:\Users\steve\cityscape\vendor\composer\ClassLoader.php:427 { …}
+    C:\Users\steve\cityscape\vendor\symfony\error-handler\DebugClassLoader.php:304 { …}
+    Symfony\Component\ErrorHandler\DebugClassLoader->loadClass() {}
+    C:\Users\steve\cityscape\vendor\symfony\config\Resource\ClassExistenceResource.php:76 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\ContainerBuilder.php:354 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:285 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:118 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:705 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:254 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:177 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\YamlFileLoader.php:133 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:163 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\FileLoader.php:94 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\FileLoader.php:70 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\Configurator\ContainerConfigurator.php:64 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:57 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:187 { …}
+    C:\Users\steve\cityscape\vendor\symfony\dependency-injection\Loader\ClosureLoader.php:36 { …}
+    C:\Users\steve\cityscape\vendor\symfony\config\Loader\DelegatingLoader.php:37 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Kernel\MicroKernelTrait.php:143 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:590 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:487 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:725 { …}
+    C:\Users\steve\cityscape\vendor\symfony\http-kernel\Kernel.php:123 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:179 { …}
+    C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php:71 { …}
+    C:\Users\steve\cityscape\vendor\symfony\console\Application.php:169 { …}
+    C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php:49 { …}
+    C:\Users\steve\cityscape\vendor\autoload_runtime.php:29 { …}
+    C:\Users\steve\cityscape\bin\console:11 { …}
+  }
+}
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+>>
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:entity Property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity Category
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > catTitle
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Category.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 27 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240318191703.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 28 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240318191805.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console make:controller Other
+ created: src/Controller/OtherController.php
+ created: templates/other/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 29 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240318202309.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+>>
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     18 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:controller Blog
+ created: src/Controller/BlogController.php
+ created: templates/blog/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:controller Blog
+
+

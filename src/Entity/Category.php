@@ -22,6 +22,9 @@ class Category
     private ?string $catName = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $catTitle = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $catSlug = null;
 
     #[ORM\Column(length: 255)]
@@ -58,6 +61,18 @@ class Category
     public function setCatName(string $catName): static
     {
         $this->catName = $catName;
+
+        return $this;
+    }
+
+    public function getCatTitle(): ?string
+    {
+        return $this->catTitle;
+    }
+
+    public function setCatTitle(string $catTitle): static
+    {
+        $this->catTitle = $catTitle;
 
         return $this;
     }

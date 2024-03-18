@@ -14,171 +14,215 @@ class CategoryFixtures extends Fixture
 		$faker = Factory::create('en_US');
 
 		// "Pages" category
-        /* $pages = new Category();
-		$pages->setName("Pages");
-		$pages->setSlug("pages");
-		$pages->setMetaTitle($faker->sentence(5));
-		$pages->setMetaDescription($faker->paragraph());
-        $manager->persist($pages);
-		
         $property = new Category();
-		$property->setName("Property");
-		$property->setSlug("property");
-		$property->setMetaTitle($faker->sentence(5));
-		$property->setMetaDescription($faker->paragraph());
-		$property->setParent($pages);
+		$property->setCatName("property");
+		$property->setCatTitle("Property");
+		$property->setCatSlug("property");
+		$property->setCatMetaTitle($faker->sentence(5));
+		$property->setCatMetaDescription($faker->paragraph());
         $manager->persist($property);
 		
         $propertySide = new Category();
-		$propertySide->setName("Property");
-		$propertySide->setSlug("property-side");
-		$propertySide->setMetaTitle($faker->sentence(5));
-		$propertySide->setMetaDescription($faker->paragraph());
-		$propertySide->setParent($pages);
+		$propertySide->setCatName("property_sidebar");
+		$propertySide->setCatTitle("Property Sidebar");
+		$propertySide->setCatSlug("sidebar");
+		$propertySide->setCatMetaTitle($faker->sentence(5));
+		$propertySide->setCatMetaDescription($faker->paragraph());
+		$propertySide->setParent($property);
         $manager->persist($propertySide);
+		$this->setReference('category_1', $propertySide);
 		
         $propertyDetails = new Category();
-		$propertyDetails->setName("Property Details");
-		$propertyDetails->setSlug("property-details");
-		$propertyDetails->setMetaTitle($faker->sentence(5));
-		$propertyDetails->setMetaDescription($faker->paragraph());
-		$propertyDetails->setParent($pages);
+		$propertyDetails->setCatName("property_details");
+		$propertyDetails->setCatTitle("Property Details");
+		$propertyDetails->setCatSlug("details");
+		$propertyDetails->setCatMetaTitle($faker->sentence(5));
+		$propertyDetails->setCatMetaDescription($faker->paragraph());
+		$propertyDetails->setParent($property);
         $manager->persist($propertyDetails);
+		$this->setReference('category_2', $propertyDetails);
 		
-        $addNewListing = new Category();
-		$addNewListing->setName("Add New Listing");
-		$addNewListing->setSlug("add-new-listing");
-		$addNewListing->setMetaTitle($faker->sentence(5));
-		$addNewListing->setMetaDescription($faker->paragraph());
-		$addNewListing->setParent($pages);
-        $manager->persist($addNewListing);
-		
-        $aboutUs = new Category();
-		$aboutUs->setName("About Us");
-		$aboutUs->setSlug("about-us");
-		$aboutUs->setMetaTitle($faker->sentence(5));
-		$aboutUs->setMetaDescription($faker->paragraph());
-		$aboutUs->setParent($pages);
-        $manager->persist($aboutUs);
-		
-        $faq = new Category();
-		$faq->setName("FAQ");
-		$faq->setSlug("faq");
-		$faq->setMetaTitle($faker->sentence(5));
-		$faq->setMetaDescription($faker->paragraph());
-		$faq->setParent($pages);
-        $manager->persist(faq);
-		
-        $checkout = new Category();
-		$checkout->setName("Checkout");
-		$checkout->setSlug("checkout");
-		$checkout->setMetaTitle($faker->sentence(5));
-		$checkout->setMetaDescription($faker->paragraph());
-		$checkout->setParent($pages);
-        $manager->persist($checkout);
-
-		$cart = new Category();
-		$cart->setName("Cart");
-		$cart->setSlug("cart");
-		$cart->setMetaTitle($faker->sentence(5));
-		$cart->setMetaDescription($faker->paragraph());
-		$cart->setParent($pages);
-        $manager->persist($cart);
-
         $project = new Category();
-		$project->setName("Project");
-		$project->setSlug("project");
-		$project->setMetaTitle($faker->sentence(5));
-		$project->setMetaDescription($faker->paragraph());
+		$project->setCatName("project");
+		$project->setCatTitle("Project");
+		$project->setCatSlug("project");
+		$project->setCatMetaTitle($faker->sentence(5));
+		$project->setCatMetaDescription($faker->paragraph());
         $manager->persist($project);
 
 		$projectSide = new Category();
-		$projectSide->setName("Project");
-		$projectSide->setSlug("project-side");
-		$projectSide->setMetaTitle($faker->sentence(5));
-		$projectSide->setMetaDescription($faker->paragraph());
+		$projectSide->setCatName("project");
+		$projectSide->setCatTitle("Project Sidebar");
+		$projectSide->setCatSlug("sidebar");
+		$projectSide->setCatMetaTitle($faker->sentence(5));
+		$projectSide->setCatMetaDescription($faker->paragraph());
 		$projectSide->setParent($project);
         $manager->persist($projectSide);
+		$this->setReference('category_1', $projectSide);
 
 		$projectDetails = new Category();
-		$projectDetails->setName("Project Details");
-		$projectDetails->setSlug("project-details");
-		$projectDetails->setMetaTitle($faker->sentence(5));
-		$projectDetails->setMetaDescription($faker->paragraph());
+		$projectDetails->setCatName("project_details");
+		$projectDetails->setCatTitle("Project Details");
+		$projectDetails->setCatSlug("details");
+		$projectDetails->setCatMetaTitle($faker->sentence(5));
+		$projectDetails->setCatMetaDescription($faker->paragraph());
 		$projectDetails->setParent($project);
         $manager->persist($projectDetails);
+		$this->setReference('category_2', $projectDetails);
 
         $blog = new Category();
-		$blog->setName("Blog");
-		$blog->setSlug("blog");
-		$blog->setMetaTitle($faker->sentence(5));
-		$blog->setMetaDescription($faker->paragraph());
+		$blog->setCatName("blog");
+		$blog->setCatTitle("Blog");
+		$blog->setCatSlug("blog");
+		$blog->setCatMetaTitle($faker->sentence(5));
+		$blog->setCatMetaDescription($faker->paragraph());
         $manager->persist($blog);
 
         $blogClassic = new Category();
-		$blogClassic->setName("Blog Classic");
-		$blogClassic->setSlug("blog-classic");
-		$blogClassic->setMetaTitle($faker->sentence(5));
-		$blogClassic->setMetaDescription($faker->paragraph());
+		$blogClassic->setCatName("blog_classic");
+		$blogClassic->setCatTitle("Blog Classic");
+		$blogClassic->setCatSlug("classic");
+		$blogClassic->setCatMetaTitle($faker->sentence(5));
+		$blogClassic->setCatMetaDescription($faker->paragraph());
 		$blogClassic->setParent($blog);
         $manager->persist($blogClassic);
+		$this->setReference('category_1', $blogClassic);
 
         $blogDetails = new Category();
-		$blogDetails->setName("Blog Details");
-		$blogDetails->setSlug("blog-details");
-		$blogDetails->setMetaTitle($faker->sentence(5));
-		$blogDetails->setMetaDescription($faker->paragraph());
+		$blogDetails->setCatName("blog_details");
+		$blogDetails->setCatTitle("Blog Details");
+		$blogDetails->setCatSlug("details");
+		$blogDetails->setCatMetaTitle($faker->sentence(5));
+		$blogDetails->setCatMetaDescription($faker->paragraph());
 		$blogDetails->setParent($blog);
         $manager->persist($blogDetails);
-
-        $contact = new Contact();
-		$contact->setName("Contact Us");
-		$contact->setSlug("contact");
-		$contact->setMetaTitle($faker->sentence(5));
-		$contact->setMetaDescription($faker->paragraph());
-        $manager->persist($contact); */
+		$this->setReference('category_2', $blogDetails);
 		
-        $categories = [
+		$other = new Category();
+		$other->setCatName("other");
+		$other->setCatTitle("Other Pages");
+		$other->setCatSlug("other-pages");
+		$other->setCatMetaTitle($faker->sentence(5));
+		$other->setCatMetaDescription($faker->paragraph());
+        $manager->persist($other);
+		
+		$addNewListing = new Category();
+		$addNewListing->setCatName("add_new_listing");
+		$addNewListing->setCatTitle("Add New Listing");
+		$addNewListing->setCatSlug("add-new-listing");
+		$addNewListing->setCatMetaTitle($faker->sentence(5));
+		$addNewListing->setCatMetaDescription($faker->paragraph());
+		$addNewListing->setParent($other);
+        $manager->persist($addNewListing);
+		$this->setReference('category_1', $addNewListing);
+		
+        $aboutUs = new Category();
+		$aboutUs->setCatName("about");
+		$aboutUs->setCatTitle("About Us");
+		$aboutUs->setCatSlug("about-us");
+		$aboutUs->setCatMetaTitle($faker->sentence(5));
+		$aboutUs->setCatMetaDescription($faker->paragraph());
+		$aboutUs->setParent($other);
+        $manager->persist($aboutUs);
+		$this->setReference('category_2', $aboutUs);
+		
+        $faq = new Category();
+		$faq->setCatName("faq");
+		$faq->setCatTitle("FAQ");
+		$faq->setCatSlug("faq");
+		$faq->setCatMetaTitle($faker->sentence(5));
+		$faq->setCatMetaDescription($faker->paragraph());
+		$faq->setParent($other);
+        $manager->persist($faq);
+		$this->setReference('category_3', $faq);
+		
+        $checkout = new Category();
+		$checkout->setCatName("checkout");
+		$checkout->setCatTitle("Checkout");
+		$checkout->setCatSlug("checkout");
+		$checkout->setCatMetaTitle($faker->sentence(5));
+		$checkout->setCatMetaDescription($faker->paragraph());
+		$checkout->setParent($other);
+        $manager->persist($checkout);
+		$this->setReference('category_4', $checkout);
+
+		$cart = new Category();
+		$cart->setCatName("cart");
+		$cart->setCatTitle("Cart");
+		$cart->setCatSlug("cart");
+		$cart->setCatMetaTitle($faker->sentence(5));
+		$cart->setCatMetaDescription($faker->paragraph());
+		$cart->setParent($other);
+		$manager->persist($cart);
+		$this->setReference('category_5', $cart);
+		
+        /*$categories = [
             [
-                'main_categories' => 'Page',
+                'main_categories' => 'Propriétés',
+                'main_names' => 'property',
                 'sub_category_array' => [
                     'Property',
                     'Property Sidebar',
-                    'Property Details',
+                    'Property Details'
+                ],
+				'sub_names_array' => [
+                    'property_sidebar',
+                    'property_details'
+                ]
+            ],
+        
+            [
+                'main_categories' => 'Projects',
+                'main_names' => 'projects',
+                'sub_category_array' => [
+                    'Project',
+                    'Project Details'
+                ],
+				'sub_names_array' => [
+                    'project',
+                    'project_details'
+                ]
+            ],
+        
+            [
+                'main_categories' => 'Blog',
+                'main_names' => 'blog',
+                'sub_category_array' => [
+                    'Blog Classic',
+                    'Blog Details'
+                ],
+				'sub_names_array' => [
+                    'blog_classic',
+                    'blog_details'
+                ]
+
+            ],
+			
+            [
+                'main_categories' => 'Other',
+                'main_names' => 'other',
+                'sub_category_array' => [
+                    'add_new_listing',
+                    'about',
+                    'faq',
+                    'checkout',
+                    'cart'
+                ],
+				'sub_names_array' => [
                     'Add New Listing',
                     'About Us',
                     'FAQ',
                     'CheckOut',
                     'Cart'
                 ]
-            ],
-        
-            [
-                'main_categories' => 'Projects',
-                'sub_category_array' => [
-                    'Project',
-                    'Project Details'
-                ]
-            ],
-        
-            [
-                'main_categories' => 'Blog',
-                'sub_category_array' => [
-                    'Blog Classic',
-                    'Blog Details'
-                ]
-            ],
-        
-            [
-                'main_categories' => 'Contact Us',
-                'sub_category_array' => []
-            ],
-        
+
+            ],			
         ];
 
         foreach ($categories as $z => $subArray) {
             $mainCategory = new Category();
-            $mainCategory->setCatName($subArray['main_categories']);
+            $mainCategory->setCatName($subArray['main_names']);
+            $mainCategory->setCatTitle($subArray['main_categories']);
             $mainCategory->setCatSlug($faker->slug());
             $mainCategory->setCatMetaTitle($faker->sentence(5));
             $mainCategory->setCatMetaDescription($faker->sentence(7));
@@ -187,6 +231,7 @@ class CategoryFixtures extends Fixture
             foreach ($subArray['sub_category_array'] as $k => $subCategoryName) {
                 $subCategory = new Category();
                 $subCategory->setCatName($subCategoryName);
+                $subCategory->setCatTitle($subCategoryName);
                 $subCategory->setCatSlug($faker->slug());
                 $subCategory->setCatMetaTitle($faker->sentence(5));
                 $subCategory->setCatMetaDescription($faker->sentence(7));
@@ -197,8 +242,8 @@ class CategoryFixtures extends Fixture
 			};
 
             $manager->flush();
-        };
+        };*/
 		
-        // $manager->flush();
+        $manager->flush();
     }
 }

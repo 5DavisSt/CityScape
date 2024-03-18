@@ -29,11 +29,25 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property->setPropNbBaths($faker->numberBetween(0, 100));
             $property->setPropNbSpaces($faker->numberBetween(0, 100));
             $property->setPropFurnished($faker->boolean());
-            $property->setPropSlug('slug'.$property->getPropTitle());
+            $property->setPropSlug('slug-property'.$i);
 			$property->setPropCategory($this->getReference('category_'.rand(1, 5)));
 			
 			for ($j = 1; $j < 4; $j++) {
-				$property->addPropPicture($this->getReference('picture'.rand(1, 50)));
+				$url = file_get_contents('https://loremflickr.com/985/584/house');
+				$picName = rand(1,1000).'.jpg';
+				$img = 'C:\Users\steve\cityscape\public\assets\images\properties/'.$picName;
+				
+				while (!file_exists('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName)) {
+					file_put_contents('C:\Users\steve\cityscape\public\assets\images\properties/'.$picName, $url);
+				}
+				
+				$picture = new Picture();
+				$picture->setPicName($picName);
+				$picture->setPicProperty($property);
+				
+				//$this->setReference('picture'.$i, $picture);
+				
+				$manager->persist($picture);
 			}
 			
 			$manager->persist($property);
