@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }}">
 		<!-- Main css -->
 		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+		{% block stylesheet %}{% endblock %}
     </head>
 	
     <body>
@@ -78,5 +79,6 @@
 
 		<!-- main js -->
 		<script src="{{ asset('assets/js/main.js') }}"></script>
+		{% block javascript %}{% endblock %}
     </body>
 </html>

@@ -29,6 +29,8 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
             $property->setPropNbBaths($faker->numberBetween(0, 100));
             $property->setPropNbSpaces($faker->numberBetween(0, 100));
             $property->setPropFurnished($faker->boolean());
+            $property->setPropLatitude($faker->latitude());
+            $property->setPropLongitude($faker->longitude());
             $property->setPropSlug('slug-property'.$i);
 			$property->setPropCategory($this->getReference('category_'.rand(1, 5)));
 			

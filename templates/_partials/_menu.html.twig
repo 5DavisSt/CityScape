@@ -36,28 +36,27 @@
             <!-- Logo End  -->
 
             <!-- Menu Start  -->
-            <div class="header-menu d-lg-block d-none">
-                
-<ul class="nav-menu flx-align ">
-    <li class="nav-menu__item">
-        <a href="{{ path('app_home') }}" class="nav-menu__link">Home</a>
-    </li>
-{% for category in categories %}
-    <li class="nav-menu__item has-submenu">
-        <a href="{{ path('app_' ~ category.catName) }}" class="nav-menu__link">{{ category.catTitle }}</a>
-        <ul class="nav-submenu">
-		{% for subCategory in category.categories %}
-            <li class="nav-submenu__item">
-                <a href="{{ path('app_' ~ category.catName, { 'slug': subCategory.catSlug }) }}" class="nav-submenu__link">{{ subCategory.catTitle }}</a>
-            </li>
-		{% endfor %}
-        </ul>
-    </li>
-{% endfor %}
-    <li class="nav-menu__item">
-        <a href="{{ path('app_contact') }}" class="nav-menu__link">Contact</a>
-    </li>
-</ul>
+            <div class="header-menu d-lg-block d-none">                
+				<ul class="nav-menu flx-align ">
+					<li class="nav-menu__item">
+						<a href="{{ path('app_home') }}" class="nav-menu__link">Home</a>
+					</li>
+					{% for category in categories %}
+					<li class="nav-menu__item has-submenu">
+						<a href="{{ path('app_' ~ category.catName) }}" class="nav-menu__link">{{ category.catTitle }}</a>
+						<ul class="nav-submenu">
+						{% for subCategory in category.categories %}
+							<li class="nav-submenu__item">
+								<a href="{{ path('app_' ~ category.catName, { 'slug': subCategory.catSlug }) }}" class="nav-submenu__link">{{ subCategory.catTitle }}</a>
+							</li>
+						{% endfor %}
+						</ul>
+					</li>
+					{% endfor %}
+					<li class="nav-menu__item">
+						<a href="{{ path('app_contact') }}" class="nav-menu__link">Contact</a>
+					</li>
+				</ul>
             </div>
             <!-- Menu End  -->
 
@@ -70,7 +69,7 @@
                         <path d="M10.0078 2.29297H30.0078" stroke="#181616" stroke-width="3"/>
                     </svg>
                 </button>
-                <a href="app_property_details" class="btn btn-outline-light d-lg-block d-none">Sell Property 
+                <a href="{{ path('app_property_details', { 'propSlug': categories.0.catSlug }) }}" class="btn btn-outline-light d-lg-block d-none">Sell Property 
                     <span class="icon-right text-gradient icon"> 
                         <i class="fas fa-arrow-right"></i>
                      </span> 

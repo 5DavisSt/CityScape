@@ -23,6 +23,9 @@ class Property
 	private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $propTitle = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $propHousingType = null;
 
     #[ORM\Column]
@@ -49,6 +52,15 @@ class Property
     #[ORM\Column(type: Types::ARRAY, nullable: true)]
     private ?array $propFeature = null;
 
+    #[ORM\Column]
+    private ?float $propLatitude = null;
+
+    #[ORM\Column]
+    private ?float $propLongitude = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $propSlug = null;
+
     #[ORM\OneToMany(targetEntity: Picture::class, mappedBy: 'picProperty', cascade: ['persist', 'remove'])]
     private Collection $propPicture;
 
@@ -64,12 +76,6 @@ class Property
     #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'rentProperty')]
     private Collection $propRent;
 
-    #[ORM\Column(length: 255)]
-    private ?string $propSlug = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $propTitle = null;
-
     public function __construct()
     {
         $this->propPicture = new ArrayCollection();
@@ -79,6 +85,18 @@ class Property
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getPropTitle(): ?string
+    {
+        return $this->propTitle;
+    }
+
+    public function setPropTitle(string $propTitle): static
+    {
+        $this->propTitle = $propTitle;
+
+        return $this;
     }
 
     public function getPropHousingType(): ?string
@@ -189,6 +207,42 @@ class Property
         return $this;
     }
 
+    public function getPropLatitude(): ?float
+    {
+        return $this->propLatitude;
+    }
+
+    public function setPropLatitude(float $propLatitude): static
+    {
+        $this->propLatitude = $propLatitude;
+
+        return $this;
+    }
+
+    public function getPropLongitude(): ?float
+    {
+        return $this->propLongitude;
+    }
+
+    public function setPropLongitude(float $propLongitude): static
+    {
+        $this->propLongitude = $propLongitude;
+
+        return $this;
+    }
+
+    public function getPropSlug(): ?string
+    {
+        return $this->propSlug;
+    }
+
+    public function setPropSlug(string $propSlug): static
+    {
+        $this->propSlug = $propSlug;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Picture>
      */
@@ -281,30 +335,6 @@ class Property
                 $propRent->setRentProperty(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getPropSlug(): ?string
-    {
-        return $this->propSlug;
-    }
-
-    public function setPropSlug(string $propSlug): static
-    {
-        $this->propSlug = $propSlug;
-
-        return $this;
-    }
-
-    public function getPropTitle(): ?string
-    {
-        return $this->propTitle;
-    }
-
-    public function setPropTitle(string $propTitle): static
-    {
-        $this->propTitle = $propTitle;
 
         return $this;
     }

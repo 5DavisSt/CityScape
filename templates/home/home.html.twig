@@ -3,7 +3,7 @@
 {% block title %}CityScape Real Estate Html Template{% endblock %}
 
 {% block body %}
-    <!-- ====================== Banner Section Start ============================ -->
+<!-- ====================== Banner Section Start ============================ -->
 <section class="banner-video">
     <video src="https://player.vimeo.com/external/263582970.hd.mp4?s=06ac4b713c0d5bff5071a615862f22c3e34adbc0&profile_id=174" loop muted autoplay class="banner-video__video">
     </video>
@@ -21,7 +21,8 @@
     </div>
 </section>
 <!-- ====================== Banner Section End ============================ -->
-    <!-- ======================== About Section Start ========================== -->
+
+<!-- ======================== About Section Start ========================== -->
 <section class="about padding-y-120">
     <div class="container container-two">
         <div class="row gy-4 align-items-center">
@@ -64,10 +65,10 @@
     </div>
 </section>
 <!-- ======================== About Section End ========================== -->
-    <!-- ============================ property Start ==================== -->
+
+<!-- ============================ Property Start ==================== -->
 <section class="property padding-y-120">
     <div class="container container-two">
-
         <div class="section-heading style-left style-dark flx-between align-items-end gap-3">
             <div class="section-heading__inner">
                 <span class="section-heading__subtitle"> <span class="text-gradient fw-semibold">Latest property</span> </span>
@@ -77,177 +78,42 @@
         </div>
 
         <div class="row gy-4">
+			{% for property in properties|slice(0, 6) %}
             <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-1.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-2.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-3.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-4.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-5.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="col-lg-4 col-sm-6">
-    <div class="property-item">
-        <div class="property-item__thumb">
-            <a href="{{ path('app_property_details') }}" class="link">
-                <img src="{{ asset('assets/images/thumbs/property-6.png') }}" alt="" class="cover-img">
-            </a> 
-            <span class="property-item__badge">Sale</span>
-        </div>
-        <div class="property-item__content">
-            <h6 class="property-item__price">$500.00 <span class="day">/per day</span> </h6>
-            <h6 class="property-item__title"> <a href="{{ path('app_property_details') }}" class="link">Paramount Investments Prestige Property Management </a> </h6>
-            <p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
-            <div class="property-item__bottom flx-between gap-2">
-                <ul class="amenities-list flx-align">
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bed"></i></span>
-                        <span class="text">3 Beds</span>
-                    </li>
-                    <li class="amenities-list__item flx-align">
-                        <span class="icon"><i class="fas fa-bath"></i></span>
-                        <span class="text">3 Baths</span>
-                    </li>
-                </ul>
-                <a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
-            </div>
-        </div>
-    </div>
-</div>
+				<div class="property-item">
+					<div class="property-item__thumb">
+						<a href="{{ path('app_property_details', { 'propSlug': property.propSlug }) }}" class="link">
+							{% set pictures = property.propPicture|first %}
+							{% if pictures is not null %}
+							<img src="{{ vich_uploader_asset(pictures, 'picFile') }}" alt="{{ property.propTitle }}" class="cover-img">
+							{% endif %}
+						</a>
+						<span class="property-item__badge">Sale</span>
+					</div>
+					<div class="property-item__content">
+						<h6 class="property-item__price">{{ property.propPrice|format_currency('EUR') }} <span class="day">/per day</span> </h6>
+						<h6 class="property-item__title"> <a href="{{ path('app_property_details', { 'propSlug': property.propSlug }) }}" class="link">{{ property.propTitle }}</a> </h6>
+						<p class="property-item__location d-flex gap-2"> <span class="icon"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America</p>
+						<div class="property-item__bottom flx-between gap-2">
+							<ul class="amenities-list flx-align">
+								<li class="amenities-list__item flx-align">
+									<span class="icon"><i class="fas fa-bed"></i></span>
+									<span class="text">{{ property.propNbBeds }} beds</span>
+								</li>
+								<li class="amenities-list__item flx-align">
+									<span class="icon"><i class="fas fa-bath"></i></span>
+									<span class="text">{{ property.propNbBaths }} baths</span>
+								</li>
+							</ul>
+							<a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
         </div>
         <div class="text-center property__btn">
-            <a href="#" class="btn btn-main"> Sell All Listing <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
+            <a href="{{ path('app_property') }}" class="btn btn-main"> Sell All Listing <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
         </div>
     </div>
 </section>

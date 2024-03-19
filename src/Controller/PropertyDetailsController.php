@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Repository\PropertyRepository;
+use App\Entity\Property;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class PropertyDetailsController extends AbstractController
 {
-    #[Route('/property/details/{slug}', name: 'app_property_details')]
-    public function index(PropertyRepository $property): Response
+    #[Route('/property/details/{propSlug}', name: 'app_property_details')]
+    public function index(Property $property): Response
     {
         return $this->render('property_details/property_details.html.twig', [
             'property' => $property,
