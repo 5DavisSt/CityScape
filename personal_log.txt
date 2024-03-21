@@ -5748,4 +5748,374 @@ PS C:\Users\steve\cityscape> symfony console make:controller Blog
  Next: Open your new controller class and add some pages!
 PS C:\Users\steve\cityscape> symfony console make:controller Blog
 
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> composer require geocoder-php/photon-provider
+./composer.json has been updated
+Running composer update geocoder-php/photon-provider
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 4 installs, 0 updates, 0 removals
+  - Locking geocoder-php/common-http (4.6.0)
+  - Locking geocoder-php/photon-provider (0.6.0)
+  - Locking php-http/discovery (1.19.2)
+  - Locking willdurand/geocoder (4.6.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 4 installs, 0 updates, 0 removals
+    Failed to download php-http/discovery from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing php-http/discovery (1.19.2) into cache
+    Failed to download willdurand/geocoder from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing willdurand/geocoder (4.6.0) into cache
+    Failed to download geocoder-php/common-http from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing geocoder-php/common-http (4.6.0) into cache
+    Failed to download geocoder-php/photon-provider from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing geocoder-php/photon-provider (0.6.0) into cache
+  - Installing php-http/discovery (1.19.2): Cloning 61e1a1eb69 from cache
+  - Installing willdurand/geocoder (4.6.0): Cloning be3d9ed0fd from cache
+  - Installing geocoder-php/common-http (4.6.0): Cloning d8c22a6612 from cache
+  - Installing geocoder-php/photon-provider (0.6.0): Cloning 5f106fc034 from cache
+Generating autoload files
+118 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+
+Symfony operations: 1 recipe (3da470a4d33566fc3f5779f90277aa4f)
+  - Configuring php-http/discovery (>=1.18): From github.com/symfony/recipes:main
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 4 installs, 0 updates, 0 removals
+  - Locking nyholm/psr7 (1.8.1)
+  - Locking psr/http-client (1.0.3)
+  - Locking psr/http-factory (1.0.2)
+  - Locking psr/http-message (2.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 4 installs, 0 updates, 0 removals
+    Failed to download psr/http-message from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing psr/http-message (2.0) into cache
+    Failed to download psr/http-factory from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing psr/http-factory (1.0.2) into cache
+    Failed to download nyholm/psr7 from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing nyholm/psr7 (1.8.1) into cache
+    Failed to download psr/http-client from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing psr/http-client (1.0.3) into cache
+  - Installing psr/http-message (2.0): Cloning 402d35bcb9 from cache
+  - Installing psr/http-factory (1.0.2): Cloning e616d01114 from cache
+  - Installing nyholm/psr7 (1.8.1): Cloning aa5fc277a4 from cache
+  - Installing psr/http-client (1.0.3): Cloning bb5906edc1 from cache
+Generating autoload files
+119 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+  - Skipping recipe for nyholm/psr7: all versions of the recipe conflict with your package versions.
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^0.6.0 for geocoder-php/photon-provider
+PS C:\Users\steve\cityscape> composer require willdurand/geocoder-bundle:^5.0
+The "5.0" constraint for "willdurand/geocoder-bundle" appears too strict and will likely not match what you want. See https://getcomposer.org/constraints
+./composer.json has been updated
+Running composer update willdurand/geocoder-bundle
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Root composer.json requires willdurand/geocoder-bundle 5.0 -> satisfiable by willdurand/geocoder-bundle[5.0.0].
+    - willdurand/geocoder-bundle 5.0.0 requires php ^7.0 -> your php version (8.3.2) does not satisfy that requirement.
+
+
+Installation failed, reverting ./composer.json and ./composer.lock to their original content.
+PS C:\Users\steve\cityscape> composer require guzzlehttp/guzzle
+./composer.json has been updated
+Running composer update guzzlehttp/guzzle
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 4 installs, 0 updates, 0 removals
+  - Locking guzzlehttp/guzzle (7.8.1)
+  - Locking guzzlehttp/promises (2.0.2)
+  - Locking guzzlehttp/psr7 (2.6.2)
+  - Locking ralouphie/getallheaders (3.0.3)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 4 installs, 0 updates, 0 removals
+    Failed to download ralouphie/getallheaders from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing ralouphie/getallheaders (3.0.3) into cache
+    Failed to download guzzlehttp/psr7 from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing guzzlehttp/psr7 (2.6.2) into cache
+    Failed to download guzzlehttp/promises from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing guzzlehttp/promises (2.0.2) into cache
+    Failed to download guzzlehttp/guzzle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing guzzlehttp/guzzle (7.8.1) into cache
+  - Installing ralouphie/getallheaders (3.0.3): Cloning 120b605dfe from cache
+  - Installing guzzlehttp/psr7 (2.6.2): Cloning 45b30f99ac from cache
+  - Installing guzzlehttp/promises (2.0.2): Cloning bbff78d960 from cache
+  - Installing guzzlehttp/guzzle (7.8.1): Cloning 41042bc7ab from cache
+Generating autoload files
+122 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+  - Skipping recipe for nyholm/psr7: all versions of the recipe conflict with your package versions.
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+Using version ^7.8 for guzzlehttp/guzzle
+PS C:\Users\steve\cityscape> composer require willdurand/geocoder-bundle:^5.0
+The "5.0" constraint for "willdurand/geocoder-bundle" appears too strict and will likely not match what you want. See https://getcomposer.org/constraints
+./composer.json has been updated
+Running composer update willdurand/geocoder-bundle
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Root composer.json requires willdurand/geocoder-bundle 5.0 -> satisfiable by willdurand/geocoder-bundle[5.0.0].
+    - willdurand/geocoder-bundle 5.0.0 requires php ^7.0 -> your php version (8.3.2) does not satisfy that requirement.
+
+
+Installation failed, reverting ./composer.json and ./composer.lock to their original content.
+PS C:\Users\steve\cityscape> composer require willdurand/geocoder-bundle
+./composer.json has been updated
+Running composer update willdurand/geocoder-bundle
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 8 installs, 0 updates, 0 removals
+  - Locking clue/stream-filter (v1.7.0)
+  - Locking geocoder-php/plugin (1.5.0)
+  - Locking php-http/curl-client (2.3.2)
+  - Locking php-http/httplug (2.4.0)
+  - Locking php-http/message (1.16.1)
+  - Locking php-http/promise (1.3.1)
+  - Locking psr/simple-cache (3.0.0)
+  - Locking willdurand/geocoder-bundle (5.20.0)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 8 installs, 0 updates, 0 removals
+    Failed to download clue/stream-filter from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing clue/stream-filter (v1.7.0) into cache
+    Failed to download php-http/message from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing php-http/message (1.16.1) into cache
+    Failed to download php-http/promise from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing php-http/promise (1.3.1) into cache
+    Failed to download php-http/httplug from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing php-http/httplug (2.4.0) into cache
+    Failed to download php-http/curl-client from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing php-http/curl-client (2.3.2) into cache
+    Failed to download psr/simple-cache from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing psr/simple-cache (3.0.0) into cache
+    Failed to download geocoder-php/plugin from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing geocoder-php/plugin (1.5.0) into cache
+    Failed to download willdurand/geocoder-bundle from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: C:\laragon\bin\php\php-8.3.2-Win32-vs16-x64\php.ini
+    Now trying to download from source
+  - Syncing willdurand/geocoder-bundle (5.20.0) into cache
+  - Installing clue/stream-filter (v1.7.0): Cloning 049509fef8 from cache
+  - Installing php-http/message (1.16.1): Cloning 5997f32893 from cache
+  - Installing php-http/promise (1.3.1): Cloning fc85b1fba3 from cache
+  - Installing php-http/httplug (2.4.0): Cloning 625ad742c3 from cache
+  - Installing php-http/curl-client (2.3.2): Cloning 0b86992245 from cache
+  - Installing psr/simple-cache (3.0.0): Cloning 764e0b3939 from cache
+  - Installing geocoder-php/plugin (1.5.0): Cloning ecda7277f9 from cache
+  - Installing willdurand/geocoder-bundle (5.20.0): Cloning 06c094cb65 from cache
+Generating autoload files
+123 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+  - Skipping recipe for nyholm/psr7: all versions of the recipe conflict with your package versions.
+
+Symfony operations: 1 recipe (442bbfe35fa35170aa3ee5ad0c82f030)
+  -  WARNING  willdurand/geocoder-bundle (>=5.0): From github.com/symfony/recipes-contrib:main
+    The recipe for this package comes from the "contrib" repository, which is open to community contributions.
+    Review the recipe at https://github.com/symfony/recipes-contrib/tree/main/willdurand/geocoder-bundle/5.0
+
+    Do you want to execute this recipe?
+    [y] Yes
+    [n] No
+    [a] Yes for all packages, only for the current installation session
+    [p] Yes permanently, never ask again for this project
+    (defaults to n): y
+  - Configuring willdurand/geocoder-bundle (>=5.0): From github.com/symfony/recipes-contrib:main
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+ What's next?
+
+
+Some files have been created and/or updated to configure your new packages.
+Please review, edit and commit them: these files are yours.
+
+No security vulnerability advisories found.
+Using version ^5.20 for willdurand/geocoder-bundle
+PS C:\Users\steve\cityscape> composer require symfony/http-client
+./composer.json has been updated
+Running composer update symfony/http-client
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 1 update, 0 removals
+  - Upgrading symfony/http-client (v7.0.4 => v7.0.5)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 0 installs, 1 update, 0 removals
+  - Syncing symfony/http-client (v7.0.5) into cache
+  - Upgrading symfony/http-client (v7.0.4 => v7.0.5): Checking out 425f462a59 from cache
+Generating autoload files
+123 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+  - Skipping recipe for nyholm/psr7: all versions of the recipe conflict with your package versions.
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+PS C:\Users\steve\cityscape> symfony console make:entity Property
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > geocoder
+
+ Field type (enter ? to see all types) [string]:
+ > ?
+
+Main Types
+  * string or ascii_string
+  * text
+  * boolean
+  * integer or smallint or bigint
+  * float
+
+Relationships/Associations
+  * relation a wizard will help you build the relation
+  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array or simple_array
+  * json
+  * object
+  * binary
+  * blob
+
+Date/Time Types
+  * datetime or datetime_immutable
+  * datetimetz or datetimetz_immutable
+  * date or date_immutable
+  * time or time_immutable
+  * dateinterval
+
+Other Types
+  * decimal
+  * guid
+  * uuid
+  * ulid
+
+
+ Field type (enter ? to see all types) [string]:
+ > object
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Property.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 31 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240320162147.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape>
+
 

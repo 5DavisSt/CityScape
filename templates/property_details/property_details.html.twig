@@ -8,7 +8,6 @@
         <div class="row gy-4">
             <div class="col-lg-8">
                 <div class="row gy-4">
-							{% for property in properties %}
 
                     <div class="col-sm-12 col-6">
                         <div class="property-details__thumb">
@@ -28,8 +27,6 @@
                     </div>
 					{% endfor %}
 					{% endif %}
-								{% endfor %}
-
                 </div>
                 <div class="property-details-wrapper">
                     <div class="property-details-item">
@@ -43,7 +40,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Room</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propNbRooms}} rooms</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propNbRooms}} rooms</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +51,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Bed</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propNbBeds}} beds</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propNbBeds}} beds</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +62,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Bath</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propNbBaths}} baths</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propNbBaths}} baths</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -76,7 +73,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Space</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propNbSpaces}} spaces</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propNbSpaces}} spaces</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +84,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Size</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propSQM}} square meters</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propSQM}} square meters</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +95,7 @@
                                         </span>
                                         <div class="amenities-content__inner">
                                             <span class="amenities-content__text">Property Type</span>
-                                            <h6 class="amenities-content__title mb-0 font-16">{{ properties.propHousingType}}</h6>
+                                            <h6 class="amenities-content__title mb-0 font-16">{{ property.propHousingType}}</h6>
                                         </div>
                                     </div>
                                 </div>

@@ -8,28 +8,28 @@
         <h2 class="section-heading__title">Do you have any question? </h2>
         <p class="section-heading__desc">For your car we will do everything  advice, repairs and maintenance. We are the some preferred choice by many car owners because</p>
     </div>
-    <form action="#" class="contact-form__form">
+	{{ form_start(form, ('attr': ('class': 'contact-form_form')) }}
         <div class="row gy-4">
             <div class="col-sm-6 col-xs-6">
-                <input type="text" class="common-input" placeholder="Your Name">
+				{{ form_widget(form.name)}}
             </div>
             <div class="col-sm-6 col-xs-6">
-                <input type="email" class="common-input" placeholder="Your E-mail">
+				{{ form_widget(form.email)}}
             </div>
             <div class="col-sm-6 col-xs-6">
-                <input type="tel" class="common-input" placeholder="Phone Number">
+				{{ form_widget(form.number)}}
             </div>
             <div class="col-sm-6 col-xs-6">
-                <input type="text" class="common-input" placeholder="Subject">
+				{{ form_widget(form.subject)}}
             </div>
             <div class="col-12">
-                <textarea class="common-input" placeholder="Your Message"></textarea>
+				{{ form_widget(form.message)}}
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-main w-100">Submit Now</button>
             </div>
         </div>
-    </form>
+		{{ form_end(form) }}
 </div>
     </div>  
 </section>

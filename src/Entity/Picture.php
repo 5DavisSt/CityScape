@@ -8,13 +8,19 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Stringable;
 
 #[ORM\Entity(repositoryClass: PictureRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
-class Picture
+class Picture implements Stringable
 {
 	use TimestampTraits;
+	
+	public function __toString(): string
+	{
+		return $this->picName;
+	}
 	
     #[ORM\Id]
     #[ORM\GeneratedValue]

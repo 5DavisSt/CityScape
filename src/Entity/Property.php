@@ -10,6 +10,11 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+use GuzzleHttp\Client;
+use Geocoder\Provider\Photon\Photon;
+use Geocoder\Query\GeocodeQuery;
+use Geocoder\Query\ReverseQuery;
+
 #[ORM\Entity(repositoryClass: PropertyRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[Vich\Uploadable]
@@ -18,9 +23,9 @@ class Property
 	use TimestampTraits;
 	
 	#[ORM\Id]
-	#[ORM\GeneratedValue]
-	#[ORM\Column]
-	private ?int $id = null;
+         	#[ORM\GeneratedValue]
+         	#[ORM\Column]
+         	private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $propTitle = null;
@@ -75,6 +80,9 @@ class Property
 
     #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'rentProperty')]
     private Collection $propRent;
+
+    #[ORM\Column(type: Types::OBJECT, nullable: true)]
+    private ?object $geocoder = null;
 
     public function __construct()
     {
@@ -338,4 +346,33 @@ class Property
 
         return $this;
     }
+	
+/*     public function getGeocoder($geocoder): static
+	{
+		$config = [
+			'timeout' => 2.0,
+			'verify' => false,
+		];
+		$url = 'https://photon.komoot.io/api/?q=berlin';
+		
+		$client = new Client($config);
+		$geocoder = new Photon($client, $url);
+
+		$geocoder->geocodeQuery(GeocodeQuery::create('Berlin'));
+
+		//$result = $geocoder->geocodeQuery(GeocodeQuery::create('Buckingham Palace, London'));
+		//$result = $geocoder->reverseQuery(ReverseQuery::fromCoordinates(...));	
+	} */
+
+public function getGeocoder(): ?object
+{
+    return $this->geocoder;
+}
+
+public function setGeocoder(?object $geocoder): static
+{
+    $this->geocoder = $geocoder;
+
+    return $this;
+}
 }
