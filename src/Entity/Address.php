@@ -37,7 +37,7 @@ class Address
     #[ORM\Column(length: 255)]
     private ?string $addCountry = null;
 
-    #[ORM\OneToOne(mappedBy: 'address', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'propAddress', cascade: ['persist', 'remove'])]
     private ?Property $addProperty = null;
 
     public function getId(): ?int

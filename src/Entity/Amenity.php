@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: AmenityRepository::class)]
 class Amenity
 {
-	use TimestampTraits;
+    use TimestampTraits;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -34,7 +34,7 @@ class Amenity
     #[ORM\Column]
     private ?bool $amenKidsZone = null;
 
-    #[ORM\OneToOne(mappedBy: 'amenity', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'propAmenity', cascade: ['persist', 'remove'])]
     private ?Property $amenProperty = null;
 
     public function getId(): ?int

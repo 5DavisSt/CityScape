@@ -39,7 +39,7 @@ class Category
     #[ORM\OneToMany(targetEntity: self::class, mappedBy: 'parent')]
     private Collection $categories;
 
-    #[ORM\OneToMany(targetEntity: Property::class, mappedBy: 'category')]
+    #[ORM\OneToMany(targetEntity: Property::class, mappedBy: 'propCategory')]
     private Collection $catProperties;
 
     public function __construct()

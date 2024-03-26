@@ -21,7 +21,8 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-							{#	{% if items|length > 0 %} #}
+				{% if items|length > 0 %}
+                                {% for item in items %}
                                   <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-3">
@@ -29,27 +30,32 @@
                                                 <img src="{{ asset('assets/images/thumbs/property-1.png') }}" alt="">
                                             </div>
                                             <div class="cart-item__content">
-                                                <h6 class="cart-item__title fw-500 font-18"> <a href="{{ path('app_property') }}" class="link">3 Rooms Manhattan</a></h6>
+                                                <h6 class="cart-item__title fw-500 font-18"> <a href="{{ path('app_property') }}" class="link">{{ item.product.propTitle }}</a></h6>
                                             <p class="property-item__location d-flex gap-2 font-14"> <span class="icon text-gradient"> <i class="fas fa-map-marker-alt"></i></span> 66 Broklyant, New York America </p>
-                                                <span class="cart-item__price">Price: <span class="fw-500 text-heading">$85.00</span></span>
+                                                <span class="cart-item__price">Price: <span class="fw-500 text-heading">{{ item.product.propPrice|format_currency('EUR') }}</span></span>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="cart-item__count">
                                             <button data-decrease="data-decrease"> <i class="fas fa-minus"></i></button>
-                                            <input data-value="data-value" type="number" value="1">
+                                            <input data-value="data-value" type="number" value="{{ item.quantity }}">
                                             <button data-increase="data-increase"><i class="fas fa-plus"></i></button>
                                         </div>
                                     </td>
                                     <td>
-                                        <h6 class="cart-item__totalPrice font-16 fw-500 mb-0">$75.00</h6>
+                                        <h6 class="cart-item__totalPrice font-16 fw-500 mb-0">{{ (item.product.propPrice * item.quantity)|format_currency('EUR') }}</h6>
                                     </td>
                                     <td>
-                                        <button type="button" class="rounded-btn delete-btn  text-danger bg-danger bg-opacity-10 flex-shrink-0"><i class="fas fa-trash-alt"></i></button>
+                                        <a href="{{ path('app_remove_cart', {id: item.product.id}) }}" class="rounded-btn delete-btn  text-danger bg-danger bg-opacity-10 flex-shrink-0"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                   </tr>
-								  {# {% endif %} #}
+                                {% endfor %}
+                                {% else %}
+                                  <tr>
+                                      <td colspan="4" class="text-center">You don't have any items in your cart.</td>
+                                  </tr>
+				{% endif %}
                                 </tbody>
                               </table>
                             <div class="mt-5 d-flex align-items-center gap-4 justify-content-between">
@@ -69,31 +75,19 @@
                         <h6 class="title mb-4">Cart Totals</h6>
                         <ul class="billing-list">
                             <li class="billing-list__item flx-between">
-                                <span class="text text-poppins font-15">3 Rooms Manhattan × 2</span>
-                                <span class="amount fw-semibold text-heading text-poppins">$321.95</span>
-                            </li>
-                            <li class="billing-list__item flx-between">
-                                <span class="text text-poppins font-15">OE Replica Wheels × 2</span>
-                                <span class="amount fw-semibold text-heading text-poppins"> $185.00 </span>
-                            </li>
-                            <li class="billing-list__item flx-between">
-                                <span class="text text-poppins font-15">Wheel Bearing Retainer × 2</span>
-                                <span class="amount fw-semibold text-heading text-poppins"> $130.00</span>
-                            </li>
-                            <li class="billing-list__item flx-between">
-                                <span class="text text-poppins font-15">Shipping and Handing</span>
-                                <span class="amount fw-semibold text-heading text-poppins"> $15.00</span>
+                                <span class="text text-poppins font-15">HT</span>
+                                <span class="amount fw-semibold text-heading text-poppins">{{ (total - (total * 0.20))|format_currency('EUR') }}</span>
                             </li>
                             <li class="billing-list__item flx-between">
                                 <span class="text text-poppins font-15">Vat</span>
-                                <span class="amount fw-semibold text-heading text-poppins"> $10.00</span>
+                                <span class="amount fw-semibold text-heading text-poppins">{{ (total * 0.20)|format_currency('EUR') }}</span>
                             </li>
                             <li class="billing-list__item flx-between">
-                                <span class="text text-poppins fw-semibold text-heading">Order Total</span>
-                                <span class="amount fw-semibold text-heading text-poppins"> $661.95</span>
+                                <span class="text text-poppins font-15">Order Total</span>
+                                <span class="amount fw-semibold text-heading text-poppins">{{ total|format_currency('EUR') }}</span>
                             </li>
                         </ul>
-                        <button type="submit" class="btn btn-main w-100 mt-4">Proceed To Checkout</button>
+                        <a href="{{ path('app_payment') }}" class="btn btn-main w-100 mt-4">Proceed To Checkout</a>
                     </div>
                 </div>
             </div>

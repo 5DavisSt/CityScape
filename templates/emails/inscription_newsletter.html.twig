@@ -1,0 +1,5 @@
+<h1>Your subscription</h1>
+
+<p>You are now subscribed to our newsletter</p>
+
+<p>Click on this link to confirm the process: <a href="{{ absolute_url(path('app_confirm_newsletter', {id: user.id, token: token})) }}">{{ absolute_url(path('app_confirm_newsletter', {id: user.id, token: token})) }}</a></p>

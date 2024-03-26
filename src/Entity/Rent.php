@@ -23,10 +23,10 @@ class Rent
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $rentPrice = null;
 
-    #[ORM\ManyToOne(inversedBy: 'rent')]
+    #[ORM\ManyToOne(inversedBy: 'userRent')]
     private ?User $rentUser = null;
 
-    #[ORM\ManyToOne(inversedBy: 'rent')]
+    #[ORM\ManyToOne(inversedBy: 'propRent')]
     private ?Property $rentProperty = null;
 
     public function getId(): ?int

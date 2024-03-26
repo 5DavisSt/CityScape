@@ -37,7 +37,7 @@ class Picture implements Stringable
     #[ORM\Column(nullable: true)]
     private ?int $picSize = null;
 
-    #[ORM\ManyToOne(inversedBy: 'picture')]
+    #[ORM\ManyToOne(inversedBy: 'propPicture')]
     private ?Property $picProperty = null;
 	
     public function getId(): ?int

@@ -13,7 +13,7 @@ class AboutController extends AbstractController
     {
         return $this->render('about/about.html.twig', [
             'controller_name' => 'AboutController',
-			'breadcrumb_title' => 'About Us',
+            'breadcrumb_title' => 'About Us',
         ]);
     }
 }

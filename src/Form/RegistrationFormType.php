@@ -20,7 +20,7 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
 				'attr' => [
-					'placeholder' => 'Entrez votre adresse mail'
+					'placeholder' => 'Please enter your email'
 				],
 				'label' => false
 				])
@@ -40,6 +40,7 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'attr' => [
+					'placeholder' => 'Please enter a password',
 					'autocomplete' => 'new-password',
 					'toggle' => true
 				],
@@ -48,7 +49,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Please enter a password'
                     ]),
                     new Length([
-                        'min' => 6,
+                        'min' => 12,
                         'minMessage' => 'Your password should be at least {{ limit }} characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,

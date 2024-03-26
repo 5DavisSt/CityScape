@@ -10,24 +10,23 @@ use Symfony\Component\Routing\Attribute\Route;
 class CartController extends AbstractController
 {	
     #[Route('/cart', name: 'app_cart')]
-    public function index(int $id, SessionInterface $session): Response
+    public function index(SessionInterface $session): Response
     {
-/* 		$cart = $session->get('cart', []);
-		
-		$cartWithData = [];
-		
-		foreach ($cart as $id => $quantity) {
-			
-		}
-		
-		foreach ($cartWithData as $item) {
-			$totalItem = $item['product']->getPrice() * $item['quantity'];
-			
-		} */
-		
+        /*$cart = $session->get('cart', []);
+
+        $cartWithData = [];
+
+        foreach ($cart as $id => $quantity) {
+
+        }
+
+        foreach ($cartWithData as $item) {
+            $totalItem = $item['product']->getPrice() * $item['quantity'];
+        }
+		*/
         return $this->render('cart/cart.html.twig', [
             'controller_name' => 'CartController',
-			'breadcrumb_title' => 'Cart',
+            'breadcrumb_title' => 'Cart',
         ]);
     }
 }

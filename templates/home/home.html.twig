@@ -105,7 +105,7 @@
 									<span class="text">{{ property.propNbBaths }} baths</span>
 								</li>
 							</ul>
-							<a href="#" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
+							<a href="{{ path('app_add_cart', { 'id': property.id }) }}" class="simple-btn">Book Now <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
 						</div>
 					</div>
 				</div>

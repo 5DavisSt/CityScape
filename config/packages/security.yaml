@@ -16,7 +16,11 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Security\UserAuthenticator
+            custom_authenticators:
+                - App\Security\UserAuthenticator
+                - App\Security\MyDiscordAuthenticator
+            # configure the form authentication as the entry point for unauthenticated users
+            entry_point: App\Security\UserAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
@@ -37,7 +41,7 @@ security:
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
-
+            
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:

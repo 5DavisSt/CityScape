@@ -6118,4 +6118,443 @@ PS C:\Users\steve\cityscape> symfony console d:s:u --force
 
 PS C:\Users\steve\cityscape>
 
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ INFO  A new Symfony CLI version is available (5.8.14, currently running 5.8.11).
+
+       If you installed the Symfony CLI via a package manager, updates are going to be automatic.
+       If not, upgrade by downloading the new version at https://github.com/symfony-cli/symfony-cli/releases
+       And replace the current binary (symfony.exe) by the new one.
+
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> composer require symfony/messenger
+./composer.json has been updated
+Running composer update symfony/messenger
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+123 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+  - Skipping recipe for nyholm/psr7: all versions of the recipe conflict with your package versions.
+
+Run composer recipes at any time to see the status of your Symfony recipes.
+
+Executing script cache:clear [OK]
+Executing script assets:install public [OK]
+Executing script importmap:install [OK]
+
+No security vulnerability advisories found.
+PS C:\Users\steve\cityscape> php bin/console debug:messenger
+
+Messenger
+=========
+
+messenger.bus.default
+---------------------
+
+ The following messages can be dispatched:
+
+ -----------------------------------------------------------
+  Symfony\Component\Process\Messenger\RunProcessMessage
+      handled by process.messenger.process_message_handler
+
+  Symfony\Component\Console\Messenger\RunCommandMessage
+      handled by console.messenger.execute_command_handler
+
+  Symfony\Component\HttpClient\Messenger\PingWebhookMessage
+      handled by http_client.messenger.ping_webhook_handler
+
+  Symfony\Component\Mailer\Messenger\SendEmailMessage
+      handled by mailer.messenger.message_handler
+
+  Symfony\Component\Messenger\Message\RedispatchMessage
+      handled by messenger.redispatch_message_handler
+
+  Symfony\Component\Notifier\Message\ChatMessage
+      handled by chatter.messenger.chat_handler
+
+  Symfony\Component\Notifier\Message\SmsMessage
+      handled by texter.messenger.sms_handler
+
+  Symfony\Component\Notifier\Message\PushMessage
+      handled by texter.messenger.push_handler
+
+ -----------------------------------------------------------
+
+PS C:\Users\steve\cityscape> symfony console make:entity Newsletter
+ created: src/Entity/Newsletter.php
+ created: src/Repository/NewsletterRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:controller Newsletter
+ created: src/Controller/NewsletterController.php
+ created: templates/newsletter/index.html.twig
+
+
+  Success!
+
+
+ Next: Open your new controller class and add some pages!
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 37 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240325132552.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+
+In ExceptionConverter.php line 117:
+
+  An exception occurred while executing a query: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value
+   for column 'discord_id' at row 27
+
+
+In Exception.php line 28:
+
+  SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'discord_id' at row 27
+
+
+In Connection.php line 33:
+
+  SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'discord_id' at row 27
+
+
+doctrine:schema:update [--em EM] [--complete] [--dump-sql] [-f|--force]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 38 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240325133546.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 39 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 39 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 39 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 39 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console make:entity Newsletter
+ created: src/Entity/Newsletter.php
+ created: src/Repository/NewsletterRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > newsEmail
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > isRGPD
+
+ Field type (enter ? to see all types) [boolean]:
+ >
+
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > newsValidationToken
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > isValid
+
+ Field type (enter ? to see all types) [boolean]:
+ >
+
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity Newsletter
+ created: src/Entity/Newsletter.php
+ created: src/Repository/NewsletterRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > newsTitle
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > newsContent
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ > stop
+
+
+
+ [ERROR] Invalid length "stop".
+
+
+ Field length [255]:
+ > ?
+
+
+
+ [ERROR] Invalid length "?".
+
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:entity Newsletter
+
+Fatal error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use in C:\Users\steve\cityscape\src\Repository\NewsletterUserRepository.php on line 17
+Symfony\Component\ErrorHandler\Error\FatalError^ {#653
+  #message: "Compile Error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\Repository\NewsletterUserRepository.php"
+  #line: 17
+  -error: array:4 [
+    "type" => 64
+    "message" => "Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+    "file" => "C:\Users\steve\cityscape\src\Repository\NewsletterUserRepository.php"
+    "line" => 17
+  ]
+}
+PS C:\Users\steve\cityscape> symfony console make:entity Newsletter
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > isSent
+
+ Field type (enter ? to see all types) [boolean]:
+ >
+
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Newsletter.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:form
+
+ The name of the form class (e.g. DeliciousElephantType):
+ > NewsletterUserType
+
+ The name of Entity or fully qualified model class name that the new form will be bound to (empty for none):
+ > Newsletter\NewsletterUser
+Newsletter\NewsletterUser
+
+ created: src/Form/NewsletterUserType.php
+
+
+  Success!
+
+
+ Next: Add fields to your form and start using it.
+ Find the documentation at https://symfony.com/doc/current/forms.html
+PS C:\Users\steve\cityscape>
+
 

@@ -20,12 +20,12 @@ use Geocoder\Query\ReverseQuery;
 #[Vich\Uploadable]
 class Property
 {
-	use TimestampTraits;
-	
-	#[ORM\Id]
-         	#[ORM\GeneratedValue]
-         	#[ORM\Column]
-         	private ?int $id = null;
+    use TimestampTraits;
+
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
+    private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $propTitle = null;
@@ -69,13 +69,13 @@ class Property
     #[ORM\OneToMany(targetEntity: Picture::class, mappedBy: 'picProperty', cascade: ['persist', 'remove'])]
     private Collection $propPicture;
 
-    #[ORM\ManyToOne(inversedBy: 'properties')]
+    #[ORM\ManyToOne(inversedBy: 'catProperties')]
     private ?Category $propCategory = null;
 
-    #[ORM\OneToOne(inversedBy: 'property', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'amenProperty', cascade: ['persist', 'remove'])]
     private ?Amenity $propAmenity = null;
 
-    #[ORM\OneToOne(inversedBy: 'property', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'addProperty', cascade: ['persist', 'remove'])]
     private ?Address $propAddress = null;
 
     #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'rentProperty')]

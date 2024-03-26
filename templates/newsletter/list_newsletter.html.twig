@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Newsletters' list{% endblock %}
+
+{% block body %}
+<h1>Newsletters' list</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Identifier</th>
+            <th>Title</th>
+            <th>Date of creation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for newsletter in newsletters %}
+            <tr>
+                <td>{{newsletter.id}}</td>
+                <td>{{newsletter.newsTitle}}</td>
+                <td>{{newsletter.createdAt|date}}</td>
+                <td>
+                {% if newsletter.isSent == false %}
+                    <a href="{{ path('app_send_newsletter', {id: newsletter.id}) }}">Envoyer</a>
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

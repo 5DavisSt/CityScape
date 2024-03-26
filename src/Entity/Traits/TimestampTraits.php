@@ -7,15 +7,15 @@ use Doctrine\ORM\Mapping as ORM;
 trait TimestampTraits
 {
 	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
-	private \DateTimeInterface $createdAt;
+	private ?\DateTimeInterface $createdAt = null;
 
 	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
-	private \DateTimeInterface $updatedAt;
+	private ?\DateTimeInterface $updatedAt = null;
 
 	#[ORM\Column (type: 'datetime_immutable', options: ['default' => 'CURRENT_TIMESTAMP'], nullable: true)]
-	private \DateTimeInterface $deletedAt;
+	private ?\DateTimeInterface $deletedAt = null;
 	
-	public function getCreatedAt(): \DateTimeInterface
+	public function getCreatedAt(): ?\DateTimeInterface
 	{
 		return $this->createdAt;
 	}
@@ -23,10 +23,10 @@ trait TimestampTraits
 	#[ORM\PrePersist]
 	public function setCreatedAt(): void
 	{
-		$this->createdAt = new \DateTimeImmutable;
+		$this->createdAt = new \DateTimeImmutable();
 	}
 		
-	public function getUpdatedAt(): \DateTimeInterface
+	public function getUpdatedAt(): ?\DateTimeInterface
 	{
 		return $this->updatedAt;
 	}
@@ -34,10 +34,10 @@ trait TimestampTraits
 	#[ORM\PreUpdate]
 	public function setUpdatedAt(): void
 	{
-		$this->updatedAt = new \DateTimeImmutable;
+		$this->updatedAt = new \DateTimeImmutable();
 	}
 
-	public function getDeletedAt(): \DateTimeInterface
+	public function getDeletedAt(): ?\DateTimeInterface
 	{
 		return $this->deletedAt;
 	}
@@ -45,6 +45,6 @@ trait TimestampTraits
 	#[ORM\PreRemove]
 	public function setDeletedAt(): void
 	{
-		$this->deletedAt = new \DateTimeImmutable;
+		$this->deletedAt = new \DateTimeImmutable();
 	}
 }

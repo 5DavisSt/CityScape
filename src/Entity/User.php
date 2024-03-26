@@ -16,7 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFactorInterface
 {
-	use TimestampTraits;
+    use TimestampTraits;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -41,20 +41,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
+    #[ORM\Column (nullable: true)]
     private ?string $password = null;
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $firstName = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lastName = null;
 
-    #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'user')]
+    #[ORM\OneToMany(targetEntity: Rent::class, mappedBy: 'rentUser')]
     private Collection $userRent;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $discordId = null;
 
     public function __construct()
     {
@@ -67,9 +70,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     }
 
 	public function isEmailAuthEnabled(): bool
-    {
-        return true; // This can be a persisted field to switch email code authentication on/off
-    }
+             {
+                 return true; // This can be a persisted field to switch email code authentication on/off
+             }
 
     public function getEmailAuthRecipient(): string
     {
@@ -151,12 +154,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     /**
      * @see PasswordAuthenticatedUserInterface
      */
-    public function getPassword(): string
+    public function getPassword(): ?string
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): static
+    public function setPassword(?string $password): static
     {
         $this->password = $password;
 
@@ -189,7 +192,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName): static
+    public function setFirstName(?string $firstName): static
     {
         $this->firstName = $firstName;
 
@@ -201,7 +204,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName): static
+    public function setLastName(?string $lastName): static
     {
         $this->lastName = $lastName;
 
@@ -234,6 +237,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
                 $userRent->setRentUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDiscordId(): ?string
+    {
+        return $this->discordId;
+    }
+
+    public function setDiscordId(?string $discordId): static
+    {
+        $this->discordId = $discordId;
 
         return $this;
     }

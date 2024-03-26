@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Preparing a newsletter{% endblock %}
+
+{% block body %}
+<h1>Write your newsletter</h1>
+{{form_start(form)}}
+    {{form_row(form.newsTitle)}}
+    {{form_row(form.newsContent)}}
+{{form_end(form)}}
+{% endblock %}
