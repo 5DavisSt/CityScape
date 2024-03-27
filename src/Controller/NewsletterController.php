@@ -4,10 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Newsletter\Newsletter;
 use App\Entity\Newsletter\NewsletterUser;
+use App\Repository\Newsletter\NewsletterRepository;
+use App\Repository\Newsletter\NewsletterUserRepository;
 use App\Form\NewsletterFormType;
 use App\Form\NewsletterUserFormType;
 use App\Message\SendNewsletterMessage;
-use App\Repository\Newsletter\NewsletterRepository;
 use App\Service\SendNewsletterService;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -103,11 +104,11 @@ class NewsletterController extends AbstractController
     }
 
     #[Route('/send/{id}', name: 'app_send_newsletter')]
-    public function send(NewsletterUser $user, Newsletter $newsletter, MessageBusInterface $messageBus): Response
+    public function send(NewsletterUser $users, Newsletter $newsletter, MessageBusInterface $messageBus): Response
     {
-        foreach ($user as $users) {
-            if ($users->isValid()) {
-                $messageBus->dispatch(new SendNewsletterMessage($users->getId(), $newsletter->getId()));
+        foreach ($users as $user) {
+            if ($user->isValid() == true) {
+                $messageBus->dispatch(new SendNewsletterMessage($user->getId(), $newsletter->getId()));
             } else {
                 throw $this->createNotFoundException('Message non envoyé');
             }

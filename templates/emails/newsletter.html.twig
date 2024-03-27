@@ -4,4 +4,4 @@
     {{newsletter.newsContent|raw}}
 </div>
 
-<p>Pour vous désinscrire, cliquez sur ce lien <a href="{{ absolute_url(path('newsletters_unsubscribe', {id: user.id, newsletter: newsletter.id, token: user.newsValidationToken})) }}">{{ absolute_url(path('newsletters_unsubscribe', {id: user.id, newsletter: newsletter.id, token: user.newsValidationToken})) }}</a></p>
+<p>Pour vous désinscrire, cliquez sur ce lien <a href="{{ absolute_url(path('app_unsuscribe_newsletter', {id: user.id, newsletter: newsletter.id, token: user.newsUserValidationToken})) }}">{{ absolute_url(path('app_unsuscribe_newsletter', {id: user.id, newsletter: newsletter.id, token: user.newsUserValidationToken})) }}</a></p>

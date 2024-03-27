@@ -4,9 +4,10 @@ namespace App\Message;
 
 class SendNewsletterMessage
 {
-    public function __construct(private int $userId, private int $newsId)
-    {
-        
+    public function __construct(
+        private int $userId,
+        private int $newsId
+    ) {  
     }
 
     public function getUserId(): int

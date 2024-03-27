@@ -16,10 +16,10 @@ class SendNewsletterService
         $this->mailer = $mailer;
     }
 
-    public function send(NewsletterUser $user, Newsletter $newsletter):void
+    public function send(NewsletterUser $user, Newsletter $newsletter): void
     {
         sleep(5);
-        // throw new \Exception('Message non envoyé');
+        //throw new \Exception('Message non envoyé');
         $email = (new TemplatedEmail())
             ->from('newsletter@cityscape.com')
             ->to($user->getNewsUserEmail())
@@ -27,6 +27,7 @@ class SendNewsletterService
             ->htmlTemplate('emails/newsletter.html.twig')
             ->context(compact('newsletter', 'user'))
         ;
+        
         $this->mailer->send($email);
     }
 }

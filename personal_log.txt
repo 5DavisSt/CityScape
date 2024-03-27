@@ -6557,4 +6557,995 @@ Newsletter\NewsletterUser
  Find the documentation at https://symfony.com/doc/current/forms.html
 PS C:\Users\steve\cityscape>
 
+PowerShell 7.4.1
+PS C:\Users\steve> cd cityscape
+PS C:\Users\steve\cityscape> symfony serve -d
+
+ INFO  A new Symfony CLI version is available (5.8.14, currently running 5.8.11).
+
+       If you installed the Symfony CLI via a package manager, updates are going to be automatic.
+       If not, upgrade by downloading the new version at https://github.com/symfony-cli/symfony-cli/releases
+       And replace the current binary (symfony.exe) by the new one.
+
+
+ [WARNING] The local web server is optimized for local development and MUST never be used in a production setup.
+
+
+
+ [OK] Web server listening
+      The Web server is using PHP CGI 8.3.2
+      https://127.0.0.1:8000
+
+
+Stream the logs via symfony.exe server:log
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 39 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240326102822.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     2 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:form
+
+Fatal error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use in C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php on line 17
+Symfony\Component\ErrorHandler\Error\FatalError^ {#4232
+  #message: "Compile Error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php"
+  #line: 17
+  -error: array:4 [
+    "type" => 64
+    "message" => "Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+    "file" => "C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php"
+    "line" => 17
+  ]
+}
+PS C:\Users\steve\cityscape> symfony console make:form
+
+Fatal error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use in C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php on line 17
+Symfony\Component\ErrorHandler\Error\FatalError^ {#4232
+  #message: "Compile Error: Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+  #code: 0
+  #file: "C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php"
+  #line: 17
+  -error: array:4 [
+    "type" => 64
+    "message" => "Cannot declare class App\Repository\NewsletterRepository, because the name is already in use"
+    "file" => "C:\Users\steve\cityscape\src\Repository\Newsletter\NewsletterRepository.php"
+    "line" => 17
+  ]
+}
+PS C:\Users\steve\cityscape> symfony console make:form
+
+ The name of the form class (e.g. OrangePuppyType):
+ > NewsletterFormType
+
+ The name of Entity or fully qualified model class name that the new form will be bound to (empty for none):
+ > Newsletter\Newsletter
+Newsletter\Newsletter
+
+ created: src/Form/NewsletterFormType.php
+
+
+  Success!
+
+
+ Next: Add fields to your form and start using it.
+ Find the documentation at https://symfony.com/doc/current/forms.html
+PS C:\Users\steve\cityscape> symfony console make:entity Bidon
+ created: src/Entity/Bidon.php
+ created: src/Repository/BidonRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > text
+
+ Field type (enter ? to see all types) [string]:
+ > ?
+?
+
+Main Types
+  * string or ascii_string
+  * text
+  * boolean
+  * integer or smallint or bigint
+  * float
+
+Relationships/Associations
+  * relation a wizard will help you build the relation
+  * ManyToOne
+  * OneToMany
+  * ManyToMany
+  * OneToOne
+
+Array/Object Types
+  * array or simple_array
+  * json
+  * object
+  * binary
+  * blob
+
+Date/Time Types
+  * datetime or datetime_immutable
+  * datetimetz or datetimetz_immutable
+  * date or date_immutable
+  * time or time_immutable
+  * dateinterval
+
+Other Types
+  * decimal
+  * guid
+  * uuid
+  * ulid
+
+
+ Field type (enter ? to see all types) [string]:
+ > text
+text
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Bidon.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with symfony.exe console make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 40 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240326132644.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     1 query was executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php on line 10
+13:44:50 CRITICAL  [php] Fatal Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In TimestampTraits.php line 10:
+
+  Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTim
+  eInterface to allow null default value
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} in C:\Users\steve\cityscape\src\Entity\Address.php on line 10
+13:46:17 CRITICAL  [php] Fatal Error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In Address.php line 10:
+
+  Error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\s
+  teve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+  Stack trace:
+  #0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(
+  'App\\Entity\\Trai...')
+  #1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(1
+  88): require_once('C:\\Users\\steve\\...')
+  #2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104):
+   Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+  #3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Map
+  ping\Driver\MappingDriverChain->getAllClassNames()
+  #4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95
+  ): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+  #5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33):
+  Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+  #6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Do
+  ctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+  #7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doc
+  trine\Migrations\Generator\DiffGenerator->createToSchema()
+  #8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.ph
+  p(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+  #9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Comm
+  and\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Conso
+  le\MigrationDiffFilteredOutput))
+  #10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\
+  Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\Migration
+  DiffFilteredOutput))
+  #11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Consol
+  e\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Con
+  sole\MigrationDiffFilteredOutput))
+  #12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBun
+  dle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBun
+  dle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+  #13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\Ma
+  kerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Comman
+  d->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Consol
+  e\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Conso
+  le\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\I
+  nput\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console
+  \Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Console
+  Output))
+  #19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Compon
+  ent\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Ou
+  tput\ConsoleOutput))
+  #20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleAppli
+  cationRunner->run()
+  #21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+  #22 {main}
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php on line 10
+13:49:11 CRITICAL  [php] Fatal Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In TimestampTraits.php line 10:
+
+  Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTim
+  eInterface to allow null default value
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php on line 13
+13:49:56 CRITICAL  [php] Fatal Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In TimestampTraits.php line 13:
+
+  Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTim
+  eInterface to allow null default value
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php on line 10
+13:51:14 CRITICAL  [php] Fatal Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTimeInterface to allow null default value ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In TimestampTraits.php line 10:
+
+  Compile Error: Default value for property of type DateTimeInterface may not be null. Use the nullable type ?DateTim
+  eInterface to allow null default value
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 41 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+ created: migrations/Version20240326135130.php
+
+
+  Success!
+
+
+ Review the new migration then run it with symfony.exe console doctrine:migrations:migrate
+ See https://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+
+In ExceptionConverter.php line 114:
+
+  An exception occurred while executing a query: SQLSTATE[22004]: Null value not allowed: 1138 Invalid use of NULL va
+  lue
+
+
+In Exception.php line 28:
+
+  SQLSTATE[22004]: Null value not allowed: 1138 Invalid use of NULL value
+
+
+In Connection.php line 33:
+
+  SQLSTATE[22004]: Null value not allowed: 1138 Invalid use of NULL value
+
+
+doctrine:schema:update [--em EM] [--complete] [--dump-sql] [-f|--force]
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:9
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} in C:\Users\steve\cityscape\src\Entity\Address.php on line 10
+13:54:06 CRITICAL  [php] Fatal Error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:9
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In Address.php line 10:
+
+  Error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve
+  \cityscape\src\Entity\Traits\TimestampTraits.php:9
+  Stack trace:
+  #0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(
+  'App\\Entity\\Trai...')
+  #1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(1
+  88): require_once('C:\\Users\\steve\\...')
+  #2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104):
+   Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+  #3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Map
+  ping\Driver\MappingDriverChain->getAllClassNames()
+  #4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95
+  ): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+  #5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33):
+  Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+  #6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Do
+  ctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+  #7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doc
+  trine\Migrations\Generator\DiffGenerator->createToSchema()
+  #8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.ph
+  p(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+  #9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Comm
+  and\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Conso
+  le\MigrationDiffFilteredOutput))
+  #10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\
+  Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\Migration
+  DiffFilteredOutput))
+  #11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Consol
+  e\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Con
+  sole\MigrationDiffFilteredOutput))
+  #12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBun
+  dle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBun
+  dle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+  #13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\Ma
+  kerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Comman
+  d->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Consol
+  e\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Conso
+  le\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\I
+  nput\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console
+  \Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Console
+  Output))
+  #19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Compon
+  ent\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Ou
+  tput\ConsoleOutput))
+  #20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleAppli
+  cationRunner->run()
+  #21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+  #22 {main}
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:9
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} in C:\Users\steve\cityscape\src\Entity\Address.php on line 10
+13:54:41 CRITICAL  [php] Fatal Error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:9
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In Address.php line 10:
+
+  Error: During class fetch: Uncaught ParseError: syntax error, unexpected token ":", expecting "]" in C:\Users\steve
+  \cityscape\src\Entity\Traits\TimestampTraits.php:9
+  Stack trace:
+  #0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(
+  'App\\Entity\\Trai...')
+  #1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(1
+  88): require_once('C:\\Users\\steve\\...')
+  #2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104):
+   Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+  #3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Map
+  ping\Driver\MappingDriverChain->getAllClassNames()
+  #4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95
+  ): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+  #5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33):
+  Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+  #6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Do
+  ctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+  #7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doc
+  trine\Migrations\Generator\DiffGenerator->createToSchema()
+  #8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.ph
+  p(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+  #9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Comm
+  and\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Conso
+  le\MigrationDiffFilteredOutput))
+  #10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\
+  Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\Migration
+  DiffFilteredOutput))
+  #11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Consol
+  e\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Con
+  sole\MigrationDiffFilteredOutput))
+  #12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBun
+  dle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBun
+  dle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+  #13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\Ma
+  kerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Comman
+  d->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Consol
+  e\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Conso
+  le\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\I
+  nput\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console
+  \Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Console
+  Output))
+  #19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Compon
+  ent\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Ou
+  tput\ConsoleOutput))
+  #20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleAppli
+  cationRunner->run()
+  #21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+  #22 {main}
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+Fatal error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} in C:\Users\steve\cityscape\src\Entity\Address.php on line 10
+15:48:27 CRITICAL  [php] Fatal Error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\steve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+Stack trace:
+#0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass('App\\Entity\\Trai...')
+#1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(188): require_once('C:\\Users\\steve\\...')
+#2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104): Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+#3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Mapping\Driver\MappingDriverChain->getAllClassNames()
+#4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+#5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33): Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+#6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Doctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+#7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doctrine\Migrations\Generator\DiffGenerator->createToSchema()
+#8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.php(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+#9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Command\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Console\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\MigrationDiffFilteredOutput))
+#12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBundle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+#13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\MakerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleApplicationRunner->run()
+#21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+#22 {main} ["exception" => Symfony\Component\ErrorHandler\Error\FatalError^ { …}]
+
+In Address.php line 10:
+
+  Error: During class fetch: Uncaught ParseError: syntax error, unexpected token "?", expecting "class" in C:\Users\s
+  teve\cityscape\src\Entity\Traits\TimestampTraits.php:26
+  Stack trace:
+  #0 C:\Users\steve\cityscape\src\Entity\Address.php(10): Symfony\Component\ErrorHandler\DebugClassLoader->loadClass(
+  'App\\Entity\\Trai...')
+  #1 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\ColocatedMappingDriver.php(1
+  88): require_once('C:\\Users\\steve\\...')
+  #2 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\Driver\MappingDriverChain.php(104):
+   Doctrine\ORM\Mapping\Driver\AttributeDriver->getAllClassNames()
+  #3 C:\Users\steve\cityscape\vendor\doctrine\doctrine-bundle\Mapping\MappingDriver.php(26): Doctrine\Persistence\Map
+  ping\Driver\MappingDriverChain->getAllClassNames()
+  #4 C:\Users\steve\cityscape\vendor\doctrine\persistence\src\Persistence\Mapping\AbstractClassMetadataFactory.php(95
+  ): Doctrine\Bundle\DoctrineBundle\Mapping\MappingDriver->getAllClassNames()
+  #5 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Provider\OrmSchemaProvider.php(33):
+  Doctrine\Persistence\Mapping\AbstractClassMetadataFactory->getAllMetadata()
+  #6 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(109): Do
+  ctrine\Migrations\Provider\OrmSchemaProvider->createSchema()
+  #7 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Generator\DiffGenerator.php(64): Doc
+  trine\Migrations\Generator\DiffGenerator->createToSchema()
+  #8 C:\Users\steve\cityscape\vendor\doctrine\migrations\lib\Doctrine\Migrations\Tools\Console\Command\DiffCommand.ph
+  p(152): Doctrine\Migrations\Generator\DiffGenerator->generate('DoctrineMigrati...', NULL, false, 120, false, false)
+  #9 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Doctrine\Migrations\Tools\Console\Comm
+  and\DiffCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Conso
+  le\MigrationDiffFilteredOutput))
+  #10 C:\Users\steve\cityscape\vendor\symfony\console\Command\LazyCommand.php(73): Symfony\Component\Console\Command\
+  Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Console\Migration
+  DiffFilteredOutput))
+  #11 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Maker\MakeMigration.php(100): Symfony\Component\Consol
+  e\Command\LazyCommand->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBundle\Con
+  sole\MigrationDiffFilteredOutput))
+  #12 C:\Users\steve\cityscape\vendor\symfony\maker-bundle\src\Command\MakerCommand.php(102): Symfony\Bundle\MakerBun
+  dle\Maker\MakeMigration->generate(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Bundle\MakerBun
+  dle\ConsoleStyle), Object(Symfony\Bundle\MakerBundle\Generator))
+  #13 C:\Users\steve\cityscape\vendor\symfony\console\Command\Command.php(279): Symfony\Bundle\MakerBundle\Command\Ma
+  kerCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #14 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(1049): Symfony\Component\Console\Command\Comman
+  d->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #15 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(125): Symfony\Component\Consol
+  e\Application->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Conso
+  le\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #16 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(318): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRunCommand(Object(Symfony\Bundle\MakerBundle\Command\MakerCommand), Object(Symfony\Component\Console\I
+  nput\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+  #17 C:\Users\steve\cityscape\vendor\symfony\framework-bundle\Console\Application.php(79): Symfony\Component\Console
+  \Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Cons
+  oleOutput))
+  #18 C:\Users\steve\cityscape\vendor\symfony\console\Application.php(169): Symfony\Bundle\FrameworkBundle\Console\Ap
+  plication->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\Console
+  Output))
+  #19 C:\Users\steve\cityscape\vendor\symfony\runtime\Runner\Symfony\ConsoleApplicationRunner.php(49): Symfony\Compon
+  ent\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Ou
+  tput\ConsoleOutput))
+  #20 C:\Users\steve\cityscape\vendor\autoload_runtime.php(29): Symfony\Component\Runtime\Runner\Symfony\ConsoleAppli
+  cationRunner->run()
+  #21 C:\Users\steve\cityscape\bin\console(11): require_once('C:\\Users\\steve\\...')
+  #22 {main}
+
+
+make:migration
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     20 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+
+In TimestampTraits.php line 26:
+
+  Cannot assign DateTimeImmutable to property App\Entity\Picture::$createdAt of type ?App\Entity\Traits\DateTimeInter
+  face
+
+
+doctrine:fixtures:load [--append] [--group GROUP] [--em EM] [--purger PURGER] [--purge-exclusions PURGE-EXCLUSIONS] [--purge-with-truncate]
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console make:migration
+
+
+ [WARNING] You have 42 available migrations to execute.
+
+
+ Are you sure you wish to continue? (yes/no) [yes]:
+ >
+
+
+
+ [WARNING] No database changes were detected.
+
+
+ The database schema and the application mapping information are already in sync.
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+
+
+ [OK] Nothing to update - your database is already in sync with the current entity metadata.
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:d --force
+ Dropping database schema...
+
+
+ [OK] Database schema dropped successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:s:u --force
+ Updating database schema...
+
+     20 queries were executed
+
+
+ [OK] Database schema updated successfully!
+
+
+PS C:\Users\steve\cityscape> symfony console d:f:l -n
+   > purging database
+   > loading App\DataFixtures\AddressFixtures
+   > loading App\DataFixtures\PictureFixtures
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\ProjectFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PropertyFixtures
+   > loading App\DataFixtures\RentFixtures
+   > loading App\DataFixtures\AmenityFixtures
+PS C:\Users\steve\cityscape>
+
 

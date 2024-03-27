@@ -84,10 +84,14 @@ class Property
     #[ORM\Column(type: Types::OBJECT, nullable: true)]
     private ?object $geocoder = null;
 
+    #[ORM\ManyToMany(targetEntity: Cart::class, mappedBy: 'cartProperty')]
+    private Collection $carts;
+
     public function __construct()
     {
         $this->propPicture = new ArrayCollection();
         $this->propRent = new ArrayCollection();
+        $this->carts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -372,6 +376,33 @@ public function getGeocoder(): ?object
 public function setGeocoder(?object $geocoder): static
 {
     $this->geocoder = $geocoder;
+
+    return $this;
+}
+
+/**
+ * @return Collection<int, Cart>
+ */
+public function getCarts(): Collection
+{
+    return $this->carts;
+}
+
+public function addCart(Cart $cart): static
+{
+    if (!$this->carts->contains($cart)) {
+        $this->carts->add($cart);
+        $cart->addCartProperty($this);
+    }
+
+    return $this;
+}
+
+public function removeCart(Cart $cart): static
+{
+    if ($this->carts->removeElement($cart)) {
+        $cart->removeCartProperty($this);
+    }
 
     return $this;
 }

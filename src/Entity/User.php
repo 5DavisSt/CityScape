@@ -59,9 +59,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $discordId = null;
 
+    #[ORM\OneToMany(targetEntity: Cart::class, mappedBy: 'cartUser')]
+    private Collection $carts;
+
     public function __construct()
     {
         $this->userRent = new ArrayCollection();
+        $this->carts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,9 +74,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     }
 
 	public function isEmailAuthEnabled(): bool
-             {
-                 return true; // This can be a persisted field to switch email code authentication on/off
-             }
+                            {
+                                return true; // This can be a persisted field to switch email code authentication on/off
+                            }
 
     public function getEmailAuthRecipient(): string
     {
@@ -249,6 +253,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     public function setDiscordId(?string $discordId): static
     {
         $this->discordId = $discordId;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Cart>
+     */
+    public function getCarts(): Collection
+    {
+        return $this->carts;
+    }
+
+    public function addCart(Cart $cart): static
+    {
+        if (!$this->carts->contains($cart)) {
+            $this->carts->add($cart);
+            $cart->setCartUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCart(Cart $cart): static
+    {
+        if ($this->carts->removeElement($cart)) {
+            // set the owning side to null (unless already changed)
+            if ($cart->getCartUser() === $this) {
+                $cart->setCartUser(null);
+            }
+        }
 
         return $this;
     }
